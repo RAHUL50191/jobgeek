@@ -1,0 +1,104 @@
+<html>
+<head>
+    <style>
+        
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #000000;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+} */
+</style>
+
+
+    </style>
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-l from-pink-500 to-blue-500">
+   <nav class="">
+    <ul class="flex justify-start  bg-black text-white ">
+        <li class="mx-2 p-4 hover:border-b-2 hover:pb-2">
+           <a href="./home.html">Home</a> 
+        </li>
+        <li class=" mx-2 p-4 hover:border-b-2 hover:pb-2">
+            <a href="./about.html">About</a> 
+         </li>
+        
+        <div class="dropdown ">
+          <button class="dropbtn mx-2 p-4  " >Dropdown</button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="/about.html">About</a>
+            <a href="#base">Base</a>
+            <a href="#blog">Blog</a>
+            <a href="./about.html">Contact</a>
+            <a href="./about.html">Support</a>
+            <a href="#tools">Tools</a>
+          </div>
+        </div>
+                
+    </ul>
+   </nav>
+   <div class="flex justify-center">
+    <div class="w-1/2  bg-gray-200 p-6 mt-14">
+        <div class="">
+            <label class="block text-gray-600 text-3xl font-bold mb-4" for="username">Login</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
+           
+             
+        </div>
+        <div class="">
+            <label class="block text-gray-600 text-3xl font-bold mb-4" for="password">Password</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password">
+        </div>
+        <div class="inline-block"><button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 my-4 rounded mx-2">Sign in</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 my-4 rounded mx-2">Sign up</button></div>
+        <div class=" text-cyan-700 mx-2"><a href="">forgot password?</a></div>
+    </div>
+   </div>
+</body>
+</html>

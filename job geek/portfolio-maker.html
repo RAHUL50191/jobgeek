@@ -1,0 +1,222 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="icon" type="image/-x-icon" href="./favicon/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-r from-pink-500 to-sky-400 ">
+    <body class="bg-gradient-to-r from-pink-500 to-sky-400 min-h-[100vh]">
+        <style>
+          
+      footer{
+            top:100%;
+            position: sticky;
+            width: 100%;
+            /* background-color: #191b91; */
+            }
+            .shadow-in{
+              
+              box-shadow: inset -1px -1px 2px rgba(69, 69, 69, 0.5);
+            }
+            
+      </style>
+        <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
+            <ul class="inline-flex  justify-center mx-[10%]">
+               <li
+                 class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:ab">
+                 <a href="./home.html"><img src="./favicon/fav2/favicon-32x32.png"></a>
+                </li>
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="./home.html">Home</a>
+                </li>
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="./about.html">About</a>
+                </li>
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="./sample.html">Search employee</a>
+                </li>
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="./sample.html">Search job</a>
+                </li>
+                <!-- rest bar -->
+                <li class="w-[10rem] "></li>
+            <li
+            class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+            <a href="./login.html">Login</a>
+            </li>
+            <li
+            class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+            <a href="./signup.html">SignUp</a>
+            </li>
+            </ul>
+      </nav>
+<!-- form -->
+<section class="flex justify-center  p-6">
+    
+    <form class="bg-slate-100 w-[50rem] p-8 rounded-lg shadow-lg p-6">
+        <p class="flex flex-row justify-center my-4"><b >Quick Create your own portfolio</b></p>
+        <hr class="flex flex-row justify-center mx-4 bg-black h-[2]">
+        
+
+
+        <label class="flex justify-start my-4" for="Profession">
+            <b>Profession</b>    
+        </label>
+
+        <div class="flex justify-center">
+        <select class="flex justify-start my-2 bg-slate-300 rounded-lg py-2 px-4 text-black w-[60rem] " id="Profession ">
+            <option value="" class="block py-2 px-4">Select Profession</option>
+            <option value="Webdevloper" class="block py-2 px-4">Webdevloper</option>
+            <option value="Photographer" class="block py-2 px-4">Photographer</option>
+            <option value="DataAnalist" class="block py-2 px-4">DataAnalist</option>
+            <option>select your field</option>
+        </select>
+        <button class="   rounded-lg bg-slate-100 hover:bg-white w-[20rem] ">+ Add feild</button>
+        </div>
+        <!-- custom dropbtn -->
+        <!-- <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown divider <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button> -->
+
+        <!-- Dropdown menu -->
+        <!-- <div id="dropdownDivider" class="hidden z-1 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 10px, 0px);">
+            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
+              <li>
+                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+              </li>
+            </ul>
+            <div class="py-1">
+              <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Separated link</a>
+            </div>
+        </div> -->
+
+        <!-- skills -->
+        <label class="flex justify-start my-4"><b>Skills</b></label>
+        <div class="flex justify-center">
+        <select class="flex justify-start my-2 bg-slate-300 rounded-lg py-2 px-4 text-black w-[60rem] " id="Profession ">
+            <option value="" class="block py-2 px-4">Select Profession</option>
+            <option value="Webdevloper" class="block py-2 px-4">Webdevloper</option>
+            <option value="Photographer" class="block py-2 px-4">Photographer</option>
+            <option value="DataAnalist" class="block py-2 px-4">DataAnalist</option>
+        </select>
+        <!-- <button class="   rounded-lg bg-slate-100 hover:bg-white w-[20rem] ">+ Add feild</button> -->
+        </div>
+        <!-- Qualifications -->
+        <label class="flex justify-start my-4"><b>Qualifications</b></label>
+        <div class="flex justify-center">
+        <select class="flex justify-start my-2 bg-slate-300 rounded-lg py-2 px-4 text-black w-[60rem] " id="Profession ">
+            <option value="" class="block py-2 px-4">Select Profession</option>
+            <option value="Webdevloper" class="block py-2 px-4">Webdevloper</option>
+            <option value="Photographer" class="block py-2 px-4">Photographer</option>
+            <option value="DataAnalist" class="block py-2 px-4">DataAnalist</option>
+        </select>
+        <!-- <button class="   rounded-lg bg-slate-100 hover:bg-white w-[20rem] ">+ Add feild</button> -->
+        </div>
+        <!-- Education -->
+        <label class="flex justify-start my-4"><b>Education</b></label>
+        <div class="flex justify-center">
+        <select class="flex justify-start my-2 bg-slate-300 rounded-lg py-2 px-4 text-black w-[60rem] " id="Profession ">
+            <option value="" class="block py-2 px-4">Select Profession</option>
+            <option value="Webdevloper" class="block py-2 px-4">Webdevloper</option>
+            <option value="Photographer" class="block py-2 px-4">Photographer</option>
+            <option value="DataAnalist" class="block py-2 px-4">DataAnalist</option>
+        </select>
+        <!-- <button class="   rounded-lg bg-slate-100 hover:bg-white w-[20rem] ">+ Add feild</button> -->
+        </div>
+        <!-- Training and experiences -->
+        <label class="flex justify-start my-4"><b>Training and experiences</b></label>
+        <div class="flex justify-center">
+        <select class="flex justify-start my-4 bg-slate-300 rounded-lg py-2 px-4 text-black w-full " id="Profession ">
+            <option value="" class="block py-2 px-4">Select Profession</option>
+            <option value="Webdevloper" class="block py-2 px-4">Webdevloper</option>
+            <option value="Photographer" class="block py-2 px-4">Photographer</option>
+            <option value="DataAnalist" class="block py-2 px-4">DataAnalist</option>
+        </select>
+        <!-- <button class="   rounded-lg bg-slate-100 hover:bg-white w-[20rem] ">+ Add feild</button> -->
+        </div>
+        <label class="flex justify-start my-4"><b>Location</b></label>
+        <div class=" flex justify-center
+        my-6">
+             
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.2290856305726!2d73.16562519778867!3d22.30717426692296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc8a4afb2c06d%3A0xa01fe5f775fac104!2sChakli%20Circle!5e0!3m2!1sen!2sin!4v1669016523835!5m2!1sen!2sin" class="w-[600] h-[450] border-[0]" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </form>
+</section>
+
+<section class=" bg-gradient-to-r from-pink-500 to-sky-400  flex justify-center p-10">
+    <div class="container bg-white p-4 flex flex-row justify-around border-black border-2">   
+        <div class="h-full w-1/3 mx-4 p-4 border-solid-black border-2 flex flex-col justify-start divide divide-y">
+            <div class="flex flex-row justify-center mb-4">Layout 1</div>
+            <div class="flex flex-row justify-center mb-4">
+                <button class="bg-blue-500 text-white px-4 py-2 my-4 rounded-lg">
+                    <a href="./">Use Layout</a>
+                </button>
+            </div>
+        </div>
+        <div class="h-full w-1/3 mx-4 p-4 border-solid-black border-2 flex flex-col justify-start divide divide-y">
+            <div class="flex flex-row justify-center mb-4">Layout 2</div>
+            <div class="flex flex-row justify-center mb-4">
+                <button class="bg-blue-500 text-white px-4 py-2 my-4 rounded-lg">
+                    <a href="./">Use Layout</a>
+                </button>
+            </div>
+        </div>
+        <div class="h-full w-1/3 mx-4 p-4 border-solid-black border-2 flex flex-col justify-start divide divide-y">
+            <div class="flex flex-row justify-center mb-4">Layout 3</div>
+            <div class="flex flex-row justify-center mb-4">
+                <button class="bg-blue-500 text-white px-4 py-2 my-4 rounded-lg">
+                    <a href="./">Use Layout</a>
+                </button>
+            </div>
+        </div>
+       
+    </div>
+</section>
+<!-- layout -->
+<section class="bg-gradient-to-r from-blue-400 to-pink-400"></section>
+<footer>
+    <section class="  bg-gray-500 text-gray-100">
+        <ul class="justify-center">
+            <li class="flex justify-center mx-4 py-5 font-bold">Copy right 2022-<a href="./Home.html" class="hover:underline">Job Geek</a><p class="text-xs">TM</p>.All right received
+            </li>
+            <li class="flex justify-center mx-4 py-5">Address-baroda,varnama,Babaria institute of technology</li>
+            <ul class="flex justify-center mx-4 py-5">
+                <li class=" h-6 w-6 mx-2">
+                    <a href="https://www.youtube.com/channel/UCpnW4eginLfg2rCcMjAn5dA?view_as=subscriber">
+                        <img class="h-6" src="https://www.freepnglogos.com/uploads/youtube-logo-transparent-10.png"
+                            width="200" alt="youtube logo transparent">
+                    </a>
+                </li>
+                <li class="h-6 w-6 mx-2">
+                    <a href="https://www.facebook.com/babaria.institute/"></a>
+                    <img class="h-6"
+                        src="https://www.freeiconspng.com/uploads/-van-de-laatste-nieuwsberichten-volg-ons-via-twitter-en-facebook-4.png"
+                        width="200" alt="Facebook new logo png">
+                    </a>
+                </li>
+                <li class="h-2 w-6 mx-2">
+                    <a
+                        href="https://www.instagram.com/bits.edu.campus_official/?utm_source=ig_profile_share&igshid=15s3hwp5s8tp8"></a>
+                    <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png">
+                    </a>
+                </li>
+            </ul>
+        </ul>
+    </section>
+    
+</footer>
+<script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+</body>
+</html>

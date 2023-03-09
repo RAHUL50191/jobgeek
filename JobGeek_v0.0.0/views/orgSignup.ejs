@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="icon" type="image/x-icon" href="../public/favicon/favicon-32x32.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-pink-500 to-sky-400 min-h-[100vh]">
+    <style>
+      
+  footer{
+        top:100%;
+        position: sticky;
+        width: 100%;
+        /* background-color: rgb(74, 45, 6); */
+        }
+        .shadow-in{
+          
+          box-shadow: inset -1px -1px 2px rgba(69, 69, 69, 0.5);
+        }
+        
+  </style>
+    <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
+        <ul class="inline-flex  justify-center mx-[10%]">
+           <li
+             class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:ab">
+             <a href="../home"><img src="../public/favicon/fav2/favicon-32x32.png"></a>
+            </li>
+            <li
+                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                <a href="../home">Home</a>
+            </li>
+            <li
+                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                <a href="../about">About</a>
+            </li>
+            <li
+                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                <a href="../search-employee/search">Search employee</a>
+            </li>
+            <li
+                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                <a href="../search-job/search">Search job</a>
+            </li>
+            <!-- rest bar -->
+            <li class="w-[10rem] "></li>
+            <li
+            class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+            <a href="./login">Login</a>
+            </li>
+            <li
+            class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+            <a href="./signup">SignUp</a>
+            </li>
+        </ul>
+  </nav>
+<section class=" bg-gradient-to-r from-pink-500 to-sky-400 flex justify-center p-10">
+    <form action="/org/signup" method="post"  enctype="multipart/form-data">
+    <div class=" w-[50rem] rounded-l-md border-4 border-gray-400 bg-white p-6 grid grid-cols-4 p-10">
+       <div class="col-span-4  text-gray-900 p-2">
+            <h1><b>SignUp page</b></h1>
+            <p>Please fill the form for job search</p>
+        </div>
+       <hr class="col-span-4 bg-black my-2 h-0.5">
+        <label class="col-span-4 font-bold text-gray-700 flex" for="orgname">orgname</label>
+        <input required class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" id="orgname" type="text" placeholder="orgname" name="org_name" autocomplete="off">
+        <label class="col-span-4 font-bold text-gray-700" autocomplete="off">Avatar</label>
+        <input  class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" name="avatar" type="file">
+        <label class="col-span-4 font-bold text-gray-700" >Email</label>
+        <input required class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" placeholder="xyz123@gmail.com" name="email" >
+        <label class="col-span-4 font-bold text-gray-700">Address</label>
+        <textarea class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2 " placeholder="address" name="address"></textarea>
+        <label class="col-span-4 font-bold text-gray-700">Password</label>
+        <input required name="password" id="psw" onkeyup="pass()" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" placeholder="Create a new Password" type="text" autocomplete="off">
+        <label class="col-span-4 font-bold text-gray-700">Re-enter password</label>
+        <input required   id="repsw" onkeyup="pass()" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" placeholder="Re-enter Password" type="text" autocomplete="off">
+        
+        
+        <button type="submit" id="btn" class="bg-slate-300 shadow-[0_2px_1px_0px_rgba(1,1,0,.3)]  hover:shadow-[inser_0_2px_1px_0px_rgba(1,1,0,.3)] p-2 rounded-lg" disabled>submit</button>
+        <script>
+            function pass() {
+                var pas = document.getElementById("psw").value;
+                var rpas = document.getElementById("repsw").value;
+                console.log(typeof pas,rpas)
+                if(pas.length<8){document.getElementById("error").innerHTML = "Password minimum length must be 8"}
+                else{
+                if (pas  != rpas ) {
+                    document.getElementById("error").innerHTML = "Enter same password in Retype Password..";
+                } else {
+                    document.getElementById("error").innerHTML = "";
+                    document.getElementById("btn").disabled = false;
+                }
+
+            }
+            }
+        </script>
+        
+    </div><p id="error"></p>
+    </form>
+    <!-- <div class="w-1/6 rounded-r-md border-r-4 border-b-4 border-t-4 border-gray-300 bg-white p-4"></div> -->
+</section>
+
+<footer>
+    <section class="  bg-gray-500 text-gray-100">
+        <ul class="justify-center">
+            <li class="flex justify-center mx-4 py-5 font-bold">Copy right 2022-<a href="./Home.html" class="hover:underline">Job Geek</a><p class="text-xs">TM</p>.All right received
+            </li>
+            <li class="flex justify-center mx-4 py-5">Address-baroda,varnama,Babaria institute of technology</li>
+            <ul class="flex justify-center mx-4 py-5">
+                <li class=" h-6 w-6 mx-2">
+                    <a href="https://www.youtube.com/channel/UCpnW4eginLfg2rCcMjAn5dA?view_as=subscriber">
+                        <img class="h-6" src="https://www.freepnglogos.com/uploads/youtube-logo-transparent-10.png"
+                            width="200" alt="youtube logo transparent">
+                    </a>
+                </li>
+                <li class="h-6 w-6 mx-2">
+                    <a href="https://www.facebook.com/babaria.institute/"></a>
+                    <img class="h-6"
+                        src="https://www.freeiconspng.com/uploads/-van-de-laatste-nieuwsberichten-volg-ons-via-twitter-en-facebook-4.png"
+                        width="200" alt="Facebook new logo png">
+                    </a>
+                </li>
+                <li class="h-2 w-6 mx-2">
+                    <a
+                        href="https://www.instagram.com/bits.edu.campus_official/?utm_source=ig_profile_share&igshid=15s3hwp5s8tp8"></a>
+                    <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png">
+                    </a>
+                </li>
+            </ul>
+        </ul>
+    </section>
+</footer>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-pink-500 to-sky-400 min-h-[100vh]">
+    <style>
+      
+    @media screen and (min-width:768px) {
+.switch {
+  position: relative;
+  display: inline-block;
+  height: 10rem;
+  border-radius: 15px;
+  overflow: hidden;
+ 
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  background-image: url(./images/search-employee.jpeg);
+  background-size: cover;
+  -webkit-transition: .4s;
+  transition: .4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.slider:before {
+  position: absolute;
+  content: "Job seeker";
+  height: 10rem;
+  width: 18.5rem;
+  left: 0px;
+  bottom: 0px;
+  background-color: rgb(69, 69, 69);
+  -webkit-transition: .4s;
+  transition: .4s; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: azure;
+  text-shadow:12px red;
+  
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+
+}
+
+input:checked + .slider:before  {
+  -webkit-transform: translateX(37.5rem);
+  -ms-transform: translateX(37.5rem);
+  transform: translateX(18.5rem);
+  content: "Organization";
+}
+.con{
+    display: absolute;
+    align-items: center;
+    justify-content: center;
+   
+}
+        }
+/* 767 width below */
+        @media screen and (max-width:768px) {
+.switch {
+  position: relative;
+  display: inline-block;
+  height: 5rem;
+  border-radius: .5rem;
+  overflow: hidden;
+ 
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  background-image: url(./images/search-employee.jpeg);
+  background-size: 17rem 5rem;
+  background-repeat: no-repeat;
+  -webkit-transition: .4s;
+  transition: .4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.slider:before {
+  position: absolute;
+  content: "Job seeker";
+  height: 5rem;
+  width: 8.5rem;
+  left: 0px;
+  bottom: 0px;
+  background-color: rgb(69, 69, 69);
+  -webkit-transition: .4s;
+  transition: .4s; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: azure;
+  text-shadow:12px red;
+  font-size: 70%;
+  
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+
+}
+
+input:checked + .slider:before  {
+  -webkit-transform: translateX(37.5rem);
+  -ms-transform: translateX(37.5rem);
+  transform: translateX(8.5rem);
+  content: "Organization";
+}
+.con{
+    display: absolute;
+    align-items: center;
+    justify-content: center;
+   
+}
+        }
+footer{
+    top:100%;
+    position: sticky;
+    width: 100%;
+}
+
+</style>
+    
+    <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
+        <ul class="inline-flex  justify-center mx-[10%]">
+            <li
+                 class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:ab">
+                <a href="./home.html"><img src="./favicon/fav2/favicon-32x32.png"></a>
+            </li>
+            <li
+                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                <a href="./home.html">Home</a>
+            </li>
+            <li
+                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                <a href="./about.html">About</a>
+            </li>
+            <li
+                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                <a href="./sample.html">Search employee</a>
+            </li>
+            <li
+                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                <a href="./sample.html">Search job</a>
+            </li>
+            <!-- rest bar -->
+            <li class="md:w-[10rem] w-[0px]"></li>
+            <li
+            class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+            <a href="./login.html">Login</a>
+            </li>
+            <li
+            class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+            <a href="./signup.html">SignUp</a>
+            </li>
+        </ul>
+  </nav>
+<section class="h-auto flex justify-center items-center my-[2rem] md:my-[6rem]">
+    <div class=" flex item-center con hidden xl:inline-flex">
+       
+        <p class=" text-4xl" style="width:600">Welcome to Job Geek <br></p>
+    </div>
+    <div class="  bg-white rounded-lg  border-2 border-slate-900 ">
+        <div class=" p-6 py-8 flex " >
+            <label class="switch justify-center rounded-[10px] w-full border-[1px] border-solid border-black">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            
+        </div>
+        <hr class="mx-6 my-2 bg-slate-900 h-[2px]">
+        <!-- < -->
+        <div class=" md:w-[40rem] w-[20rem] grid grid-cols-2 p-8">
+            <div class="col-span-2">
+                <label class="block text-gray-600 md:text-3xl font-bold mb-6 text-[1.5rem]" for="username">Login</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-6" id="username" type="text" placeholder="Username">
+            </div>
+            <div class="col-span-2">
+                <label class="block text-gray-600 md:text-3xl font-bold mb-6  text-[1.5rem]" for="password">Password</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 mb-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password">
+            </div>
+            <div><button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 my-4 rounded mx-2 "><a href="./user_home.html">Sign in</a></button></div>
+            <div><button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 my-4 rounded mx-2">Sign up</button></div>
+            <div class="col-span-2 text-cyan-700 mx-2 py-6"><a href="">forgot password?</a></div>
+        </div>
+        <!-- > -->
+    </div>
+   
+</section>
+<footer>
+    <section class="h-max  bg-gray-500 text-gray-100">
+        <ul class="justify-center">
+            <li class="flex justify-center mx-4 py-5 font-bold">Copy right 2022-<a href="./Home.html" class="hover:underline">Job Geek</a><p class="text-xs">TM</p>.All right received
+            </li>
+            <li class="flex justify-center mx-4 py-5">Address-baroda,varnama,Babaria institute of technology</li>
+            <ul class="flex justify-center mx-4 py-5">
+                <li class=" h-6 w-6 mx-2">
+                    <a href="https://www.youtube.com/channel/UCpnW4eginLfg2rCcMjAn5dA?view_as=subscriber">
+                        <img class="h-6" src="https://www.freepnglogos.com/uploads/youtube-logo-transparent-10.png"
+                            width="200" alt="youtube logo transparent">
+                    </a>
+                </li>
+                <li class="h-6 w-6 mx-2">
+                    <a href="https://www.facebook.com/babaria.institute/"></a>
+                    <img class="h-6"
+                        src="https://www.freeiconspng.com/uploads/-van-de-laatste-nieuwsberichten-volg-ons-via-twitter-en-facebook-4.png"
+                        width="200" alt="Facebook new logo png">
+                    </a>
+                </li>
+                <li class="h-2 w-6 mx-2">
+                    <a
+                        href="https://www.instagram.com/bits.edu.campus_official/?utm_source=ig_profile_share&igshid=15s3hwp5s8tp8"></a>
+                    <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png">
+                    </a>
+                </li>
+            </ul>
+        </ul>
+    </section>
+</footer>
+</body>
+</html>

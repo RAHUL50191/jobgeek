@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href=".././favicon/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-pink-500 to-sky-400 min-h-[100vh]">
+  <style>
+    
+footer{
+      top:100%;
+      position: sticky;
+      width: 100%;
+      /* background-color: rgb(74, 45, 6); */
+      }
+      .shadow-in{
+        
+        box-shadow: inset -1px -1px 2px rgba(69, 69, 69, 0.5);
+      }
+      html{
+        scroll-behavior: smooth;
+      }
+      
+</style>
+  <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
+      <ul class="inline-flex  justify-center mx-[10%]">
+         <li
+           class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:ab">
+           <a href="#end"><img src=".././favicon/fav2/favicon-32x32.png"></a>
+          </li>
+          <li
+              class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+              <a href="/home">Home</a>
+          </li>
+          <li
+              class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+              <a href="./">About</a>
+          </li>
+          <li
+              class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+              <a href="./sample.html">Search employee</a>
+          </li>
+          <li
+              class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+              <a href="/seach-job/joblist">Search job</a>
+          </li>
+          <!-- rest bar -->
+          <li class="w-[10rem] "></li>
+          <li
+          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="./login.html">Login</a>
+          </li>
+          <li
+          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="./signup.html">SignUp</a>
+          </li>
+      </ul>
+</nav>
+<!-- searchbar -->
+<section class="flex justify-center p-[5rem] pb-[2.5rem]">
+  <div class="h-[3rem] w-[75rem]  flex flex-wrap justify-center items-center px-16 ">
+    <div class="input-group relative flex flex-wrap items-stretch w-full h-full mb-4">
+      <input type="search" onkeyup="search(this)" class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+    </div>
+  </div>
+  <!-- search bar script-jobcont.getJobList.jobRouter.app.server -->
+  <script>
+  
+    function search(e){
+     //Select container and card template
+      const cardTemplate=document.getElementById('cardTemplate');
+      const cardContainer=document.getElementById('cardContainer');
+      //fetch(req="./name"),route(./name).post
+      fetch('getJobList',
+      {
+        method:"POST",
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify({query:e.value})
+      })
+      .then(res=>res.json())//response data from json to javascript format
+      .then(data=>{
+        let payload=data.payload;//data object =res.json()={payload:search}
+
+        //Empty the card and container before putting data
+        cardContainer.innerHTML='';
+        cardTemplate.innerHTML='';
+        console.log(cardTemplate);
+        if(payload<1){cardContainer.innerHTML="nothing found";return;}//nothing found 
+    
+          payload.forEach((item,index) => {
+            const card=cardTemplate.cloneNode(true);
+            
+            card.innerHTML+=`<p>${item.job_title}</p>`
+            card.innerHTML+=`${item.imageUrl}`
+            card.innerHTML+=`<p>${item.desc}</p>`
+            card.innerHTML+=`<p>${item.salary}</p>`
+            // console.log(card)
+            cardContainer.append(card);
+            
+          });
+        return;
+      })
+    }
+
+
+  </script>
+    
+</section>
+<!-- searchbar result -->
+<section class="flex justify-center p-[5rem] pb-[2.5rem]">
+      <div id="cardContainer" class="bg-slate-800 w-[75rem]  flex justify-evenly flex-wrap  items-center pt-[1rem] pb-[1rem]">
+        
+      </div>
+      <!-- separate container and card so innerHtml does not get deleted -->
+      <div style="display:none">
+        <div id="cardTemplate" class="bg-white w-[15rem] h-[25rem] m-[1rem] ">
+
+        </div>
+      </div>
+</section>
+<!-- rendering from serverside -->
+<!-- <section class="flex justify-center p-[5rem] pb-[2.5rem]">
+<div class="bg-slate-800 w-[75rem]  flex justify-evenly flex-wrap  items-center pt-[1rem] pb-[1rem]">
+  {%DATA%}
+</div>
+</section> -->
+<footer>
+  <section class="h-max  bg-gray-500 text-gray-100">
+      <ul class="justify-center">
+          <li class="flex justify-center mx-4 py-5 font-bold">Copy right 2022-<a href="./Home.html" class="hover:underline">Job Geek</a><p class="text-xs">TM</p>.All right received
+          </li>
+          <li class="flex justify-center mx-4 py-5">Address-baroda,varnama,Babaria institute of technology</li>
+          <ul class="flex justify-center mx-4 py-5">
+              <li class=" h-6 w-6 mx-2">
+                  <a href="https://www.youtube.com/channel/UCpnW4eginLfg2rCcMjAn5dA?view_as=subscriber">
+                      <img class="h-6" src="https://www.freepnglogos.com/uploads/youtube-logo-transparent-10.png"
+                          width="200" alt="youtube logo transparent">
+                  </a>
+              </li>
+              <li class="h-6 w-6 mx-2">
+                  <a href="https://www.facebook.com/babaria.institute/"></a>
+                  <img class="h-6"
+                      src="https://www.freeiconspng.com/uploads/-van-de-laatste-nieuwsberichten-volg-ons-via-twitter-en-facebook-4.png"
+                      width="200" alt="Facebook new logo png">
+                  </a>
+              </li>
+              <li class="h-2 w-6 mx-2">
+                  <a
+                      href="https://www.instagram.com/bits.edu.campus_official/?utm_source=ig_profile_share&igshid=15s3hwp5s8tp8"></a>
+                  <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png">
+                  </a>
+              </li>
+          </ul>
+      </ul>
+  </section>
+</footer>
+</body>
+</html>
