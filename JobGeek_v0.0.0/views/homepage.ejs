@@ -54,9 +54,9 @@ footer{
           class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
           <a href="./user/login">Login</a>
           </li>
-          <li
+          <li onclick="location.replace(`http://127.0.0.1:8000/user/signup`)"
           class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-          <a href="./user/signup">SignUp</a>
+          SignUp
           </li>
       </ul>
 </nav>
@@ -66,8 +66,23 @@ footer{
     
 
     <div class="input-group relative flex flex-wrap items-stretch w-full h-full mb-4">
-      <input type="search" class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+      <input type="search" id="search" class=" form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" onkeydown="searchFunc(event)" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
     </div>
+    <script>
+      function searchFunc(){
+        let key = event.key;
+  
+        console.log("The key was: " + key)
+       
+        if (key === "Enter") {
+        // Do work
+         const searchdata=document.getElementById("search").value;
+         console.log(searchdata)
+        location.replace(`http://127.0.0.1:8000/search-job/search?name=${searchdata}&desc=&salary=`)
+
+      }
+    }
+    </script>
   </div>
   
 </section>
@@ -77,18 +92,30 @@ footer{
 <section class="flex justify-center px-[5rem] pb-[2.5rem]">
   
   <div class="h-[25rem] w-[75rem] flex flex-wrap justify-center items-center px-10 py-8">
-
-    <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex  justify-center items-center shadow-in">Accountant</div>
-    <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Business analyst</div>
-    <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Back-end dev</div>
-    <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Data analyst</div>
-    <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Full-stack dev</div>
-    <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Game dev</div>
-    <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Graphic designer</div>
-    <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex  justify-center items-center">Software eng</div>
-    
-
-   
+    <a href="/search-job/search?name=Accountant&desc=&salary=">
+      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex  justify-center items-center shadow-in">Accountant</div>
+    </a>
+    <a href="/search-job/search?name=Business analyst&desc=&salary=">
+      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Business analyst</div>
+    </a>
+    <a href="/search-job/search?name=Back-end dev&desc=&salary=">
+      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Back-end dev</div>
+    </a>
+    <a href="/search-job/search?name=Data analyst&desc=&salary=">
+      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Data analyst</div>
+    </a>
+    <a href="/search-job/search?name=Full-stack dev&desc=&salary=">
+      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Full-stack dev</div>
+    </a>
+    <a href="/search-job/search?name=Game dev&desc=&salary=">
+      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Game dev</div>
+    </a>
+    <a href="/search-job/search?name=Graphic designer&desc=&salary=">
+      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Graphic designer</div>
+    </a>
+    <a href="/search-job/search?name=Software eng&desc=&salary=">
+      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex  justify-center items-center">Software eng</div>
+    </a>
   </div>
   
 
@@ -108,7 +135,7 @@ footer{
       </div>
     </div>
     <!-- inlet desc -push page -->
-    <div class="h-[40rem] xl:w-[35rem] sm:w-[24rem] rounded-lg bg-white block left-[10rem] shadow-md  flex-inline     bg-[#cfcfcf]   justify-center  p-14 py-12 relative">
+    <div class="h-[40rem] xl:w-[35rem] sm:w-[24rem] rounded-lg bg-white block left-[10rem] shadow-md  flex-inline  bg-[#cfcfce]   justify-center  p-14 py-12 relative" style="background-color: #cfcfcf;">
     
         <img src="./images/img1.jpeg" class="h-[40%] w-full bg-pink-400 mb-6 object-fill shadow-inner shadow-[3px]">
    
