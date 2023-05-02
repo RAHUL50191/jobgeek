@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview room : <%= mentor %></title>
+    <link rel="icon" type="image/x-icon" href="../public/favicon/favicon-32x32.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gradient-to-r from-pink-500 to-sky-400 min-h-[100vh] overflow-hidden">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
+      <ul class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 float-left hover:ab">
+        <a href="#end"><img src="../public/favicon/fav2/favicon.ico" /></a>
+      </ul>
+      <ul class="hidden md:inline-flex justify-center bg-black">
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../home">Home</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../about">About</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../search-employee/search">Search employee</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../search-job/search">Search job</a>
+        </li>
+        <!-- rest bar -->
+        <li class="w-0 md:w-[10rem]"></li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../user/login">Login</a>
+        </li>
+        <li
+          onclick="location.replace(`http://127.0.0.1:8000/user/signup`)"
+          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg"
+        >
+          SignUp
+        </li>
+      </ul>
+      <ul class="w-auto"></ul>
+      <ul
+        class="float-right md:hidden p-6 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg"
+        id="menu"
+        onclick="Menu()"
+        onblur="qMenu()"
+      >
+        Menu
+      </ul>
+      <!-- Menu-->
+      <ul class="hidden justify-center block w-full bg-black right-0 top-[4rem]" id="list">
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../home">Home</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../about">About</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../search-employee/search">Search employee</a>
+        </li>
+        <li
+          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg"
+        >
+          <a href="../search-job/search">Search job</a>
+        </li>
+        <!-- rest bar -->
+        <li class="w-0 min-[930px]:w-[10rem]"></li>
+        <li
+          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg"
+        >
+          <a href="../user/login">Login</a>
+        </li>
+        <li
+          onclick="location.replace(`http://127.0.0.1:8000/user/signup`)"
+          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg"
+        >
+          SignUp
+        </li>
+      </ul>
+
+      <script>
+        const menu = document.getElementById("menu");
+        const list = document.getElementById("list");
+        function Menu() {
+          if (list.style.position === "absolute") {
+            list.style.position = "relative";
+            list.style.display = "none";
+          } else {
+            list.style.position = "absolute";
+            list.style.display = "block";
+          }
+        }
+        function qMenu() {
+          list.style.position = "absolute";
+          list.style.display = "block";
+        }
+      </script>
+    </nav>
+    <div id="call" class="min-[266px]:p-10"></div>
+    <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+    <script>
+      callE1 = document.getElementById("call");
+      callFrame = window.DailyIframe.createFrame(callE1, { iframeStyle: { width: "100%", height: "80vh" } });
+
+      callFrame.join({
+        url: "https://dual-communication.daily.co/UBqCU7YXeZCnOvS1vokg",
+        token:
+          "eyJhbGci0iJIUzI1NiIsInR5cC161kpXVCJ9. eyJvIjp0cnV1LCJkIjoiNDlhYzNmMmYtOTdkYS00MGZmLWE1NTE TOWNhYmE5ZTQ0MDkwIiwiaWF0IjoxNjQ1NTMXNDE1FQ. M4cN8vZSSVDqPxD0mvvQeTZA5v4vSc3197yx4p-F21c",
+      });
+      document.querySelector("#start").addEventListener("click", () => {
+        callFrame.startTranscription();
+      });
+      callFrame.on("app-message", (message) => {
+        console.log(message);
+      });
+    </script>
+  </body>
+</html>

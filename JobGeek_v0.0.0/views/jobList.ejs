@@ -26,7 +26,7 @@ footer{
       }
       
 </style>
-  <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
+  <!-- <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
       <ul class="inline-flex  justify-center mx-[10%]">
          <li
            class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:ab">
@@ -48,7 +48,7 @@ footer{
               class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
               <a href="./search">Search job</a>
           </li>
-          <!-- rest bar -->
+         
           <li class="w-[10rem] "></li>
           <li
           class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
@@ -59,28 +59,117 @@ footer{
           <a href="../user/signup">SignUp</a>
           </li>
       </ul>
+</nav> -->
+<nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
+  <ul
+    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 float-left hover:ab">
+    <a href="#end"><img src="../public/favicon/fav2/favicon.ico"></a>
+  </ul>
+  <ul class="hidden md:inline-flex  justify-center  bg-black">
+     
+   <li
+       class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+       <a href="../home">Home</a>
+   </li>
+   <li
+       class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+       <a href="../about">About</a>
+   </li>
+   <li
+       class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+       <a href="../search-employee/search">Search employee</a>
+   </li>
+   <li
+       class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+       <a href="./search">Search job</a>
+   </li>
+  
+   <li class="w-[10rem] "></li>
+   <li
+   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+   <a href="../user/login">Login</a>
+   </li>
+   <li
+   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+   <a href="../user/signup">SignUp</a>
+   </li>
+      
+  </ul>
+  <ul class="w-auto "></ul>
+  <ul class="float-right md:hidden  p-6 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg" id="menu" onclick="Menu()" onblur="qMenu()">Menu
+  </ul>
+<!-- Menu-->
+  <ul class="hidden justify-center block w-full  bg-black right-0 top-[4rem] " id="list">
+     <li
+         class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+         <a href="../home">Home</a>
+     </li>
+     <li
+         class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+         <a href="../about">About</a>
+     </li>
+     <li
+         class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+         <a href="../search-employee/search">Search employee</a>
+     </li>
+     <li
+         class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+         <a href="./search">Search job</a>
+     </li>
+     <!-- rest bar -->
+     <li class="w-0 min-[930px]:w-[10rem] "></li>
+     <li
+     class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+     <a href="../user/login">Login</a>
+     </li>
+     <li onclick="location.replace(`http://127.0.0.1:8000/user/signup`)"
+     class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+     SignUp
+     </li>
+     
+ </ul>
+       
+      <script>
+        const menu=document.getElementById("menu");
+        const list=document.getElementById("list");
+        function Menu(){
+         if(list.style.position==="absolute"){
+         list.style.position='relative';
+         list.style.display='none';
+        }
+         else {
+         list.style.position='absolute';
+         list.style.display='block';
+        }
+        }
+        function qMenu() {
+         list.style.position='absolute';
+         list.style.display='block';
+        }
+         
+       </script>
 </nav>
 <!-- searchbar -->
-<section class="flex justify-center p-[5rem] pb-[2.5rem]">
+<section class="flex justify-center py-[2rem] sm:p-[5rem] pb-[2.5rem]">
   <!-- <div >
     <div class="input-group relative flex flex-wrap items-stretch w-full h-full mb-4"> -->
-     <form action="/search-job/search" class="h-[3rem] w-[75rem]  flex flex-wrap justify-center items-center     px-16 inline-block"> 
+     <form action="/search-job/search" class="h-[3rem] w-[75rem]  flex flex-wrap justify-center items-center   xs:px-16 inline-block"> 
       <input type="search" name="name" class="form-control relative px-3 py-1.5  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-l transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "  placeholder="search job title">
       <input type="search" name="desc" class="form-control relative px-3 py-1.5  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300  transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "  placeholder="search description">
       <input type="search" name="salary" class="form-control relative px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300   transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "  placeholder="search by salary">
-      <button type="submit" class="  block hover:bg-cyan-400 px-3 py-1.5 text-base font-normal text-gray-700  bg-slate-100 bg-clip-padding border border-solid border-gray-300 rounded-r-lg  p-2  " value="search">search</button>
+      <button type="submit" class="  inline-block hover:bg-cyan-400 px-3 py-1.5 text-base font-normal text-gray-700  bg-slate-100 bg-clip-padding border border-solid border-gray-300 rounded-r-lg  p-2  " value="search">search</button>
      </form> 
     <!-- </div>  -->
 </section>
 <!-- searchbar result -->
-<section class="flex justify-center p-[5rem] pb-[2.5rem]">
+<section class="flex justify-center py-[5rem] sm:p-[5rem] pb-[2.5rem]">
       
-  <div class="bg-slate-800   flex justify-evenly flex-wrap  items-center pt-[1rem] pb-[1rem]">
+  <div class="bg-slate-800   flex justify-evenly flex-wrap  items-center min-[275px]:py-[1rem] ">
             <% if(items!=undefined){%>
              
             <% items.forEach(function(image) { %>
       
-            <div class="bg-white w-[15rem] h-[25rem] m-[1rem] cover">
+            <div class="bg-white w-[15rem] h-[25rem] min-[275px]:m-[1rem] cover">
                  
                 <img src="data:image/<%=image.imageUrl.contentType%>;base64,
                   <%=image.imageUrl.data.toString('base64')%>" class="h-[10rem]">
@@ -104,26 +193,26 @@ footer{
 
 
 <footer>
-  <section class="h-max  bg-gray-500 text-gray-100">
+  <section class="h-max sm:text-sm bg-gray-500 text-gray-100">
       <ul class="justify-center">
-          <li class="flex justify-center mx-4 py-5 font-bold">Copy right 2022-<a href="./Home.html" class="hover:underline">Job Geek</a><p class="text-xs">TM</p>.All right received
+          <li class="flex justify-center xs:mx-4 py-5 font-bold">Copy right 2022-<a href="./Home.html" class="hover:underline">Job Geek</a><p class="text-xs">TM</p>.All right received
           </li>
-          <li class="flex justify-center mx-4 py-5">Address-baroda,varnama,Babaria institute of technology</li>
-          <ul class="flex justify-center mx-4 py-5">
-              <li class=" h-6 w-6 mx-2">
+          <li class="flex justify-center xs:mx-4 py-5">Address-baroda,varnama,Babaria institute of technology</li>
+          <ul class="flex justify-center xs:mx-4 py-5">
+              <li class=" h-6 w-6 xs:mx-2">
                   <a href="https://www.youtube.com/channel/UCpnW4eginLfg2rCcMjAn5dA?view_as=subscriber">
                       <img class="h-6" src="https://www.freepnglogos.com/uploads/youtube-logo-transparent-10.png"
                           width="200" alt="youtube logo transparent">
                   </a>
               </li>
-              <li class="h-6 w-6 mx-2">
+              <li class="h-6 w-6 xs:mx-2">
                   <a href="https://www.facebook.com/babaria.institute/"></a>
                   <img class="h-6"
                       src="https://www.freeiconspng.com/uploads/-van-de-laatste-nieuwsberichten-volg-ons-via-twitter-en-facebook-4.png"
                       width="200" alt="Facebook new logo png">
                   </a>
               </li>
-              <li class="h-2 w-6 mx-2">
+              <li class="h-2 w-6 xs:mx-2">
                   <a
                       href="https://www.instagram.com/bits.edu.campus_official/?utm_source=ig_profile_share&igshid=15s3hwp5s8tp8"></a>
                   <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png">

@@ -49,7 +49,7 @@
             }
         </style>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <nav id="jbNav" class="bg-black text-gray-100 sticky top-0 z-[1]">
+        <!-- <nav id="jbNav" class="bg-black text-gray-100 sticky top-0 z-[1]">
             <ul class="flex justify-center mx-[10%]">
                 <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:ab">
                     <a href="../home"><img src="../public/favicon/fav2/favicon-32x32.png" /></a>
@@ -67,13 +67,85 @@
                     <a href="../search-job/search">Search job</a>
                 </li>
                 <!-- rest bar -->
+            <!-- </ul>
+        </nav> --> 
+        <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
+            <ul
+              class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 float-left hover:ab">
+              <a href="#end"><img src="../public/favicon/fav2/favicon.ico"></a>
             </ul>
-        </nav>
+            <ul class="hidden md:inline-flex  justify-center  bg-black">
+               
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="../home">Home</a>
+                </li>
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="../about">About</a>
+                </li>
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="../search-employee/search">Search employee</a>
+                </li>
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="../search-job/search">Search job</a>
+                </li>
+                 
+                
+            </ul>
+            <ul class="w-auto "></ul>
+            <ul class="float-right md:hidden  p-6 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg" id="menu" onclick="Menu()" onblur="qMenu()">Menu
+            </ul>
+          <!-- Menu-->
+            <ul class="hidden justify-center block w-full  bg-black right-0 top-[4rem] " id="list">
+               <li
+                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                   <a href="../home">Home</a>
+               </li>
+               <li
+                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                   <a href="../about">About</a>
+               </li>
+               <li
+                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                   <a href="../search-employee/search">Search employee</a>
+               </li>
+               <li
+                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                   <a href="../search-job/search">Search job</a>
+               </li>
+               <!-- rest bar -->
+                
+               
+           </ul>
+                 
+                <script>
+                  const menu=document.getElementById("menu");
+                  const list=document.getElementById("list");
+                  function Menu(){
+                   if(list.style.position==="absolute"){
+                   list.style.position='relative';
+                   list.style.display='none';
+                  }
+                   else {
+                   list.style.position='absolute';
+                   list.style.display='block';
+                  }
+                  }
+                  function qMenu() {
+                   list.style.position='absolute';
+                   list.style.display='block';
+                  }
+                   
+                 </script>
+      </nav>
         <!-- <section id="jbNav" class="w-full h-[5rem]"  ></section> -->
         <section id="wellcome-text">
-            <div class="flex justify-center bg-gradient-to-b from-orange-300 px-[1rem] sm:px-[5rem] md:px-[2.5rem] lg:px-[5rem] xl:px-[5rem] py-[2rem] sm:py-[5rem] md:py-[5rem] lg:py-[5rem] xl:py-[10rem]">
+            <div class="flex justify-center bg-gradient-to-b from-orange-300 px-[1rem] sm:px-[1rem] md:px-[2.5rem] lg:px-[5rem] xl:px-[5rem] py-[2rem] sm:py-[5rem] md:py-[5rem] lg:py-[5rem] xl:py-[10rem]">
                 <div
-                    class="py-[8.9rem] overflow-x-auto min-h-[15rem] h-auto w-[75rem] text-lg sm:text-2xl md:text-4xl lg:text-6xl xl:text-8xl flex flex-wrap justify-center items-center px-16"
+                    class="py-[8.9rem] overflow-x-auto min-h-[15rem] h-auto w-[75rem] text-lg sm:text-2xl md:text-4xl lg:text-6xl xl:text-8xl flex flex-wrap justify-center items-center md:px-16"
                     data-aos="fade-left"
                     data-aos-offset="300"
                     data-aos-easing="ease-in-out"
@@ -83,13 +155,12 @@
                 </div>
             </div>
         </section>
-        <label id="Profile" class="flex justify-center text-3xl pt-5 text-white">Easily manage your Profile</label>
+        <label id="Profile" class="flex justify-center md:text-3xl text-md pt-5 text-white">Easily manage your Profile</label>
         <!-- User-nav => template render using js -->
-        <section
-            class="max-h-[60rem] flex justify-start px-[1rem] sm:px-[5rem] md:px-[2.5rem] lg:px-[5rem] xl:px-[5rem] pt-[1rem] sm:pt-[2.5rem] md:pt-[2.5rem] lg:pt-[2.5rem] xl:pt-[5rem] pb-[2rem] sm:pb-[5rem] md:pb-[5rem] lg:pb-[5rem] xl:pb-[10rem]"
-        >
-            <div class="p-[2.5rem] flex justify-center items-center">
-                <navbar class="bg-white w-[10rem] lg:h-[25rem] lg:w-[20rem] p-4 rounded-xl border-slate-300 border-4">
+        <section > 
+           <div class="hidden min-[610px]:flex max-h-[60rem] flex justify-start px-[1rem] sm:px-[1rem] md:px-[2.5rem]  lg:p-0   pt-[1rem] sm:pt-[2.5rem] md:pt-[2.5rem] lg:pt-[2.5rem] xl:pt-[5rem] pb-[2rem] sm:pb-[5rem] md:pb-[5rem] lg:pb-[5rem] xl:pb-[10rem]">
+            <div class="px-[0.5rem] py-[2rem] md:p-[1.5rem] flex justify-center items-center">
+                <navbar class="bg-white min-[610px]:w-[10rem] lg:h-[25rem] lg:w-[20rem] p-4 rounded-xl border-slate-300 border-4">
                     <!-- <div class="flex justify-center"></div> -->
                 <% if(user.avatar.data){ %>
                 <img class="rounded-full h-12 w-12 bg-cover"src="data:image/<%=user.avatar.contentType%>;base64,<%=user.avatar.data.toString('base64')%>">
@@ -109,10 +180,39 @@
                     <button onclick="Account()" titles="Manage credential,signout,change avatar,email,password" class="my-2 custom-button"><a href="#Profile">Support Tools</a></button> -->
                 </navbar>
             </div>
-            <pre class="bg-black min-h-[30rem] w-[2px]"></pre>
-            <div class="p-[2.5rem] w-[70rem]" id="main_container">
-                <div id="template" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-out" class="bg-white h-full border-slate-400 border-4 border-solid p-14 max-h-[50rem] overflow-y-auto">
+            <pre class="bg-black min-h-[30rem] min-[610px]:w-[2px]"></pre>
+            <div class="px-[0.5rem] py-[2rem] md:p-[2.5rem] w-[70rem]" id="main_container">
+                <div id="template" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-out" class="bg-white min-[350px]:w-[25rem] min-[610px]:w-full  h-full border-slate-400 border-4 border-solid p-4 md:p-14 max-h-[50rem] overflow-y-auto ">
                     <p class="text-3xl">Click on navbar options to view in this block!!</p>
+                </div>
+            </div>
+           </div>
+           
+        </section>
+        <section 
+            class="hidden max-[610px]:block max-h-[60rem] max-[425px]:text-md ">
+            <div class="px-[0.5rem]  md:p-[1.5rem] w-full text-md min-w-[25rem]">
+                <navbar class="inline-flex bg-white  w-full p-4  border-slate-300 border-2 text-sm">
+                    <!-- <div class="flex justify-center"></div> -->
+                <% if(user.avatar.data){ %>
+                <img class="rounded-full h-12 w-12 bg-cover"src="data:image/<%=user.avatar.contentType%>;base64,<%=user.avatar.data.toString('base64')%>">
+                <% }else{ %>
+                    <img class="rounded-full h-12 w-12 bg-cover mx-2" src='https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png'/>
+                <% } %>
+
+                    <!-- <div ><%user.avatar%></div> -->
+                    <!-- onerror="this.src='https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png'" -->
+                    <button onclick="Account()" id="prev" titles="Manage credential,signout,change avatar,email,password" class="m-2 custom-button"><a href="#Profile">Account</a></button><br />
+                    <button onclick="DashBoard()" id="prev" titles="Your profile visible on search-employee" class="my-2 custom-button"><a href="#Profile">DashBoard</a></button><br />
+                    <button onclick="EditProfile()" id="prev" titles="Additional Personal details" class="m-2 custom-button"><a href="#Profile">Edit Profile</a></button><br />
+                    <button onclick="Application()" id="prev" titles="Additional Personal details" class="m-2 custom-button"><a href="#Profile">Application</a></button><br />
+                </navbar>
+            </div>
+            
+            
+            <div class="px-[0.5rem] py-[1rem] md:p-[2.5rem] " id="main_container">
+                <div id="template" class="bg-white min-w-[25rem] w-full min-[610px]:w-full  h-full border-slate-400 border-4 border-solid p-4 md:p-14  max-h-[50rem] overflow-y-auto ">
+                    <p class="text-md">Click on navbar options to view in this block!!</p>
                 </div>
             </div>
             
