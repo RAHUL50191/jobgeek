@@ -50,33 +50,152 @@
                
             </ul>
         </nav> -->
- 
+        <!-- <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
+            <ul
+              class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 float-left hover:ab">
+              <a href="#end"><img src="../public/favicon/fav2/favicon.ico"></a>
+            </ul>
+            <ul class="hidden md:inline-flex  justify-center  bg-black">
+               
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="../home">Home</a>
+                </li>
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="../about">About</a>
+                </li>
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="../search-employee/search">Search employee</a>
+                </li>
+                <li
+                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                    <a href="../search-job/search">Search job</a>
+                </li>
+                
+                <li class="w-0 md:w-[10rem] "></li>
+                <li
+                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                <a href="../user/login">Login</a>
+                </li>
+                <li  
+                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                <a href="../user/signup">SignUp</a>
+                </li>
+                
+            </ul>
+            <ul class="w-auto "></ul>
+            <ul class="float-right md:hidden  p-6 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg" id="menu" onclick="Menu()" onblur="qMenu()">Menu
+            </ul>
+           
+            <ul class="hidden justify-center block w-full  bg-black right-0 top-[4rem] " id="list">
+               <li
+                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                   <a href="../home">Home</a>
+               </li>
+               <li
+                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                   <a href="../about">About</a>
+               </li>
+               <li
+                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                   <a href="../search-employee/search">Search employee</a>
+               </li>
+               <li
+                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+                   <a href="../search-job/search">Search job</a>
+               </li>
+           
+               <li class="w-0 min-[930px]:w-[10rem] "></li>
+               <li
+               class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+               <a href="../user/login">Login</a>
+               </li>
+               <li  
+               class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+               <a href="../user/signup">SignUp</a>
+               </li>
+               
+           </ul>
+                 
+                <script>
+                  const menu=document.getElementById("menu");
+                  const list=document.getElementById("list");
+                  function Menu(){
+                   if(list.style.position==="absolute"){
+                   list.style.position='relative';
+                   list.style.display='none';
+                  }
+                   else {
+                   list.style.position='absolute';
+                   list.style.display='block';
+                  }
+                  }
+                  function qMenu() {
+                   list.style.position='absolute';
+                   list.style.display='block';
+                  }
+                   
+                 </script>
+        </nav> -->
         <!-- org-nav => template render using js -->
          
         <navbar >
-                 <ul class="inline px-[12rem] sticky top-0 z-[1] bg-black text-white">
+                 <ul class="inline px-[4rem] md:px-[12rem] sticky top-0 z-[1] bg-black text-white">
                     <div class=" inline-flex items-ceneter">
             <% if(org.avatar.data){ %>
             <img class="inline rounded-full h-14 w-14 bg-cover"src="data:image/<%=org.avatar.contentType%>;base64,<%=org.avatar.data.toString('base64')%>">
             <% }else{ %>
                 <img class="inline rounded-full h-12 w-12 bg-cover" src='https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-org-circle-icon-png.png'/>
             <% } %></div>
-
-               <ul class="float-right">
+                
+                <ul class="inline-flex  md:hidden  p-4 xs:p-0 sm:p-0 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg" id="menu" onclick="Menu()" onblur="qMenu()">Menu</ul>
+               <ul class="float-right bg-black hidden md:block" >
                 <li onclick="Account()" id="prev" titles="Manage credential,signout,change avatar,email,password" class="p-4  hover:border-b-2 hover:pb-4 text-xs sm:text-base md:text-lg float-left"> Account </li> 
                 <li onclick="DashBoard()" id="prev" titles="Your profile visible on search-employee" class="p-4   hover:border-b-2 hover:pb-4 text-xs sm:text-base md:text-lg float-left"> DashBoard </li> 
                 <li onclick="postJob()" id="prev" titles="Additional Personal details" class=" p-4  hover:border-b-2 hover:pb-4 text-xs sm:text-base md:text-lg float-left"> Post Job </li>
-               </ul> 
+                
+               </ul>
+           
+               <ul class="float-right bg-black hidden md:static" id="list">
+                <li onclick="Account()" id="prev" titles="Manage credential,signout,change avatar,email,password" class="p-4  hover:border-b-2 hover:pb-4 text-xs sm:text-base md:text-lg float-left"> Account </li> 
+                <li onclick="DashBoard()" id="prev" titles="Your profile visible on search-employee" class="p-4   hover:border-b-2 hover:pb-4 text-xs sm:text-base md:text-lg float-left"> DashBoard </li> 
+                <li onclick="postJob()" id="prev" titles="Additional Personal details" class=" p-4  hover:border-b-2 hover:pb-4 text-xs sm:text-base md:text-lg float-left"> Post Job </li>
+                
+               </ul>  
             </ul>
+            
+        
+                <script>
+                    console.log(document.getElementById("list"))
+                  const menu=document.getElementById("menu");
+                  const list=document.getElementById("list");
+                  function Menu(){
+                   if(list.style.position==="absolute"){
+                   list.style.position='relative';
+                   list.style.display='none';
+                  }
+                   else {
+                   list.style.position='absolute';
+                   list.style.display='block';
+                  }
+                  }
+                  function qMenu() {
+                   list.style.position='absolute';
+                   list.style.display='block';
+                  }
+                   
+                 </script>
         </navbar>
          
         <section
-            class="max-h-[60rem] flex justify-start px-[1rem] sm:px-[5rem] md:px-[2.5rem] lg:px-[5rem] xl:px-[5rem] pt-[1rem] sm:pt-[2.5rem] md:pt-[2.5rem] lg:pt-[2.5rem] xl:pt-[5rem] pb-[2rem] sm:pb-[5rem] md:pb-[5rem] lg:pb-[5rem] xl:pb-[10rem]"
+            class="max-h-[60rem] flex justify-start px-[1rem] sm:px-[5rem] md:px-[2.5rem] lg:px-[5rem] xl:px-[5rem] pt-[5rem] sm:pt-[2.5rem] md:pt-[2.5rem] lg:pt-[2.5rem] xl:pt-[5rem] pb-[2rem] sm:pb-[5rem] md:pb-[5rem] lg:pb-[5rem] xl:pb-[10rem]"
         >
             
            
             <div class="p-[2.5rem] min-h-[30rem] w-full" id="main_container">
-                <div id="template" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-out" class="bg-white h-full border-slate-400 border-4 border-solid p-14 max-h-[50rem] overflow-y-auto">
+                <div id="template" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-out" class="bg-white h-full border-slate-400 border-4 border-solid p-8 md:p-14 max-h-[50rem] overflow-y-auto">
                     <p class="text-3xl">Click on navbar options to view in this block!!</p>
                 </div>
             </div>

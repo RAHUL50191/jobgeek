@@ -23,6 +23,9 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 // 2) ROUTES
+app.route("/about").get(async (req, res) => {
+  res.render("about");
+});
 app.use("/search-employee", applicationRouter);
 app.use("/search-job", jobRouter);
 app.use("/", homeRouter);
