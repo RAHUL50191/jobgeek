@@ -240,7 +240,7 @@ exports.loginAPI = async (req, res) => {
         //   // resume: userdata.resume,
         //   token: tokenData,
         // };
-        res.status(200).redirect(`/home?token=${userData.token}`);
+        res.status(200).redirect(`https://jobgeek.onrender.com/user/home?token=${userData.token}`);
         // return res.status(200).send(userData);
 
         // res.status(200).render("userDashboard", { items: userdata });
