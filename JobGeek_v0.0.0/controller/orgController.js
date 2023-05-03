@@ -24,8 +24,7 @@ const RCfileFilter = (req, file, cb) => {
     if (
       file.mimetype === "application/pdf" ||
       file.mimetype === "application/msword" ||
-      file.mimetype ===
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      file.mimetype === "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     ) {
       // check file type to be pdf, doc, or docx
       cb(null, true);
@@ -62,8 +61,7 @@ const fileFilter = (req, file, cb) => {
     if (
       file.mimetype === "application/pdf" ||
       file.mimetype === "application/msword" ||
-      file.mimetype ===
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      file.mimetype === "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     ) {
       // check file type to be pdf, doc, or docx
       cb(null, true);
@@ -72,11 +70,7 @@ const fileFilter = (req, file, cb) => {
     }
   } else {
     // else uploading image
-    if (
-      file.mimetype === "image/png" ||
-      file.mimetype === "image/jpg" ||
-      file.mimetype === "image/jpeg"
-    ) {
+    if (file.mimetype === "image/png" || file.mimetype === "image/jpg" || file.mimetype === "image/jpeg") {
       // check file type to be png, jpeg, or jpg
       cb(null, true);
     } else {
@@ -118,7 +112,7 @@ const sendResetEmail = async (name, email, token) => {
       html:
         "<p>Hi " +
         name +
-        ",Please copy this link for reset email:<a href='http://127.0.0.1:8000/org/reset_email?token=" +
+        ",Please copy this link for reset email:<a href='https://jobgeek.onrender.com/org/reset_email?token=" +
         token +
         "'>reset link</a></p>",
     };
@@ -150,7 +144,7 @@ const sendResetPasswordEmail = async (name, email, token) => {
       html:
         "<p>Hi " +
         name +
-        ",Please copy this link for reset password:<a href='http://127.0.0.1:8000/org/reset_password?token=" +
+        ",Please copy this link for reset password:<a href='https://jobgeek.onrender.com/org/reset_password?token=" +
         token +
         "'>reset link</a></p>",
     };
@@ -237,11 +231,7 @@ exports.loginAPI = async (req, res) => {
       const passwordValid = await bcryptjs.compare(password, orgdata.password);
       if (passwordValid) {
         const tokenData = await create_token(orgdata._id);
-        const orgData = await org.findOneAndUpdate(
-          { _id: orgdata._id },
-          { $set: { token: tokenData } },
-          { new: true }
-        );
+        const orgData = await org.findOneAndUpdate({ _id: orgdata._id }, { $set: { token: tokenData } }, { new: true });
 
         // const orgData = {
         //   _id: orgdata._id,
@@ -253,9 +243,7 @@ exports.loginAPI = async (req, res) => {
         //   // resume: orgdata.resume,
         //   token: tokenData,
         // };
-        res
-          .status(200)
-          .redirect(`http://127.0.0.1:8000/org/home?token=${orgData.token}`);
+        res.status(200).redirect(`https://jobgeek.onrender.com/org/home?token=${orgData.token}`);
         // return res.status(200).send(orgData);
 
         // res.status(200).render("orgDashboard", { items: orgdata });
@@ -286,10 +274,7 @@ exports.forgotPassword = async (req, res) => {
     if (orgdata) {
       // const newPassword = await bcryptjs.hash(req.body.password, 10);
       const Rstr = randStr.generate();
-      await org.findOneAndUpdate(
-        { _id: orgdata._id },
-        { $set: { token: Rstr } }
-      );
+      await org.findOneAndUpdate({ _id: orgdata._id }, { $set: { token: Rstr } });
       sendResetPasswordEmail(orgdata.org_name, orgdata.email, Rstr);
       res.status(200).send("check your email");
     } else {
@@ -311,10 +296,7 @@ exports.resetEmail = async (req, res) => {
     if (orgdata) {
       // const newPassword = await bcryptjs.hash(req.body.password, 10);
       const Rstr = randStr.generate();
-      await org.findOneAndUpdate(
-        { _id: orgdata._id },
-        { $set: { token: Rstr } }
-      );
+      await org.findOneAndUpdate({ _id: orgdata._id }, { $set: { token: Rstr } });
       sendResetEmail(orgdata.org_name, orgdata.email, Rstr);
       res.status(200).send("check your email");
     } else {
@@ -340,10 +322,7 @@ exports.updateEmail = async (req, res) => {
       token: token,
     });
     if (orgdata) {
-      await org.findOneAndUpdate(
-        { _id: orgdata._id },
-        { $set: { email: req.body.email } }
-      );
+      await org.findOneAndUpdate({ _id: orgdata._id }, { $set: { email: req.body.email } });
 
       res.status(200).redirect("/org/login");
     } else {
@@ -403,12 +382,8 @@ exports.resetPassword = async (req, res) => {
     if (tokendata) {
       const newPassword = await bcryptjs.hash(req.body.password, 10);
 
-      await org.findOneAndUpdate(
-        { _id: tokendata._id },
-        { $set: { password: newPassword, token: "" } },
-        { new: true }
-      );
-      res.status(200).redirect("http://127.0.0.1:8000/org/login");
+      await org.findOneAndUpdate({ _id: tokendata._id }, { $set: { password: newPassword, token: "" } }, { new: true });
+      res.status(200).redirect("https://jobgeek.onrender.com/org/login");
       // res.status(200).send("Password has been changed" +"id:" +tokendata._id +"token:" +tokendata.token);
     } else {
       res.status(401).send("invalid token");
@@ -518,10 +493,7 @@ exports.register_org = async (req, res) => {
       } else {
         const spassword = await bcryptjs.hash(req.body.password, 10);
         let av, re;
-        req.files
-          ? ((av = req.files["avatar"] ? true : false),
-            (re = req.files["resume"] ? true : false))
-          : {};
+        req.files ? ((av = req.files["avatar"] ? true : false), (re = req.files["resume"] ? true : false)) : {};
         const neworg = new org({
           org_name: req.body.org_name,
           avatar: {

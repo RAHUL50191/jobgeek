@@ -23,7 +23,7 @@ mongoose
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   console.log(`App running on port ${port}...`);
-  console.log("http://127.0.0.1:8000/home");
+  console.log("https://jobgeek.onrender.com/home");
 });
 
 process.on("unhandledRejection", (err) => {
