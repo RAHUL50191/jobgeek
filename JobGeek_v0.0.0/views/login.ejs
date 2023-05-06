@@ -72,9 +72,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before  {
-  -webkit-transform: translateX(37.5rem);
-  -ms-transform: translateX(37.5rem);
-  transform: translateX(18.5rem);
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(100%);
   content: "Organization";
 }
 .con{
@@ -150,9 +150,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before  {
-  -webkit-transform: translateX(37.5rem);
-  -ms-transform: translateX(37.5rem);
-  transform: translateX(8.5rem);
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(93%);
   content: "Organization";
 }
 .con{
@@ -302,20 +302,20 @@ footer{
         <div class="p-4 sm:p-6 py-8 flex " >
             <label class="switch justify-center rounded-[10px] w-full border-[1px] border-solid border-black">
                 <input type="checkbox" id="formSwitch">
-                <span class="slider"><img src="../public/images/search-employee.jpeg"></span>
+                <span class="slider"><img src="../public/images/search-employee.jpeg" class="h-full  md:w-full"></span>
             </label>
             
         </div>
         <hr class="mx-6 my-2 bg-slate-900 h-[2px]">
         <!-- < -->
         <form action="/user/login" method="post" id="form1">
-        <div class=" md:w-[40rem] w-[20rem] grid grid-cols-2 p-4 sm:p-8">
+        <div class="w-[15rem]   min-[325px]:w-[20rem] md:w-[40rem]  grid grid-cols-2 p-4 md:p-8">
             <div class="col-span-2">
-                <label  class="block text-gray-600 md:text-3xl font-bold mb-6 text-[1.5rem]" for="username">Login</label>
+                <label  class="block text-gray-600 md:text-3xl font-bold mb-2 md:mb-6 text-[1.25rem]" for="username">Login</label>
                 <input name="user_name" class="shadow appearance-none border rounded w-full py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-6" id="username" type="text" placeholder="Username">
             </div>
             <div class="col-span-2">
-                <label class="block text-gray-600 md:text-3xl font-bold mb-6  text-[1.5rem]" for="password">Password</label>
+                <label class="block text-gray-600 md:text-3xl font-bold mb-2 md:mb-6  text-[1.25rem]" for="password">Password</label>
                 <input name="password" class="shadow appearance-none border rounded w-full py-2 px-3 mb-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password" required>
             </div>
             <div>
@@ -334,13 +334,13 @@ footer{
         <!-- > -->
         <!-- < -->
         <form action="/org/login" method="post" id="form2" style="display:none">
-            <div class=" md:w-[40rem] w-[20rem] grid grid-cols-2 p-8">
+            <div class=" md:w-[40rem] w-[15rem] min-[325px]:w-[20rem] grid grid-cols-2 p-4 md:p-8">
                 <div class="col-span-2">
-                    <label  class="block text-gray-600 md:text-3xl font-bold mb-6 text-[1.5rem]" for="orgname">Login org</label>
+                    <label  class="block text-gray-600 md:text-3xl font-bold mb-2 md:mb-6 text-[1.25rem]" for="orgname">Login org</label>
                     <input name="org_name" class="shadow appearance-none border rounded w-full py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-6" id="orgname" type="text" placeholder="Username">
                 </div>
                 <div class="col-span-2">
-                    <label class="block text-gray-600 md:text-3xl font-bold mb-6  text-[1.5rem]" for="password">Password</label>
+                    <label class="block text-gray-600 md:text-3xl font-bold mb-2 md:mb-6  text-[1.25rem]" for="password">Password</label>
                     <input name="password" class="shadow appearance-none border rounded w-full py-2 px-3 mb-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password" required>
                 </div>
                 <div>
