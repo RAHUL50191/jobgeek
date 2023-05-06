@@ -1,55 +1,60 @@
-<!DOCTYPE html >
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-         
-        <!-- data:image/user.avatar.contentType;base64,user.avatar.data.toString('base64') -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        
-        <!-- <link rel="icon" type="image/-x-icon" href='../public/images/default-user.svg'> -->
-        <% if(user.avatar.data){ %>
-        <link rel="icon" type="image/-x-icon" style="border-radius: 2rem;"  href="data:image/<%=user.avatar.contentType%>;base64,<%=user.avatar.data.toString('base64')%>" />
-        <% }else{ %>
-            <link rel="icon" type="image/-x-icon" href='../public/images/default-user.svg'>
-            <% } %>
-        <title><%= user.user_name%>'s home</title>
+    <!-- data:image/user.avatar.contentType;base64,user.avatar.data.toString('base64') -->
 
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="bg-gradient-to-r from-[#dd52a1] to-[#47b3f0] sm:from-pink-500 sm:to-sky-400 md:from-pink-500 md:to-sky-400 min-h-[100vh]">
-        <style>
-            footer {
-                top: 100%;
-                position: sticky;
-                width: 100%;
-                /* background-color: rgb(74, 45, 6); */
-            }
-            .sticky {
-                position: fixed;
-                top: 0;
-                width: 100%;
-            }
+    <!-- <link rel="icon" type="image/-x-icon" href='../public/images/default-user.svg'> -->
+    <% if(user.avatar.data){ %>
+    <link
+      rel="icon"
+      type="image/-x-icon"
+      style="border-radius: 2rem"
+      href="data:image/<%=user.avatar.contentType%>;base64,<%=user.avatar.data.toString('base64')%>"
+    />
+    <% }else{ %>
+    <link rel="icon" type="image/-x-icon" href="../public/images/default-user.svg" />
+    <% } %>
+    <title><%= user.user_name%>'s home</title>
 
-            .custom-button[titles]:hover:after {
-                content: attr(titles);
-                /* background-image: linear-gradient(135deg, #f0abfc, #c4b5fd); */
-                /* background-image: linear-gradient(135deg, #4ade80, #3b82f6); */
-                background-color:rgb(241, 241, 241);
-                color: #000000;
-                padding: 3px;
-                border: 2px outset rgb(230, 230, 230);
-                font-size: small;
-                border-radius: 2rem;
-                padding-left: 1rem;
-                padding-right: 1rem;
-                position: absolute;
-                z-index: 1;
-            }
-        </style>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <!-- <nav id="jbNav" class="bg-black text-gray-100 sticky top-0 z-[1]">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gradient-to-r from-[#dd52a1] to-[#47b3f0] sm:from-pink-500 sm:to-sky-400 md:from-pink-500 md:to-sky-400 min-h-[100vh]">
+    <style>
+      footer {
+        top: 100%;
+        position: sticky;
+        width: 100%;
+        /* background-color: rgb(74, 45, 6); */
+      }
+      .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      .custom-button[titles]:hover:after {
+        content: attr(titles);
+        /* background-image: linear-gradient(135deg, #f0abfc, #c4b5fd); */
+        /* background-image: linear-gradient(135deg, #4ade80, #3b82f6); */
+        background-color: rgb(241, 241, 241);
+        color: #000000;
+        padding: 3px;
+        border: 2px outset rgb(230, 230, 230);
+        font-size: small;
+        border-radius: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        position: absolute;
+        z-index: 1;
+      }
+    </style>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- <nav id="jbNav" class="bg-black text-gray-100 sticky top-0 z-[1]">
             <ul class="flex justify-center mx-[10%]">
                 <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:ab">
                     <a href="../home"><img src="../public/favicon/fav2/favicon-32x32.png" /></a>
@@ -67,362 +72,372 @@
                     <a href="../search-job/search">Search job</a>
                 </li>
                 <!-- rest bar -->
-            <!-- </ul>
-        </nav> --> 
-        <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
-            <ul
-              class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 float-left hover:ab">
-              <a href="#end"><img src="../public/favicon/fav2/favicon.ico"></a>
-            </ul>
-            <ul class="hidden md:inline-flex  justify-center  bg-black">
-               
-                <li
-                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-                    <a href="../home">Home</a>
-                </li>
-                <li
-                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-                    <a href="../about">About</a>
-                </li>
-                <li
-                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-                    <a href="../search-employee/search">Search employee</a>
-                </li>
-                <li
-                    class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-                    <a href="../search-job/search">Search job</a>
-                </li>
-                <!-- rest bar -->
-                <li class="w-0 md:w-[10rem] "></li>
-                <li
-                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-                <a href="../user/login">Login</a>
-                </li>
-                <li  
-                class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-                <a href="../user/signup">SignUp</a>
-                </li>
-                
-            </ul>
-            <ul class="w-auto "></ul>
-            <ul class="float-right md:hidden  p-6 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg" id="menu" onclick="Menu()" onblur="qMenu()">Menu
-            </ul>
-          <!-- Menu-->
-            <ul class="hidden justify-center block w-full  bg-black right-0 top-[4rem] " id="list">
-               <li
-                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-                   <a href="../home">Home</a>
-               </li>
-               <li
-                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-                   <a href="../about">About</a>
-               </li>
-               <li
-                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-                   <a href="../search-employee/search">Search employee</a>
-               </li>
-               <li
-                   class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-                   <a href="../search-job/search">Search job</a>
-               </li>
-               <!-- rest bar -->
-               <li class="w-0 min-[930px]:w-[10rem] "></li>
-               <li
-               class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-               <a href="../user/login">Login</a>
-               </li>
-               <li  
-               class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-               <a href="../user/signup">SignUp</a>
-               </li>
-               
-           </ul>
-                 
-                <script>
-                  const menu=document.getElementById("menu");
-                  const list=document.getElementById("list");
-                  function Menu(){
-                   if(list.style.position==="absolute"){
-                   list.style.position='relative';
-                   list.style.display='none';
-                  }
-                   else {
-                   list.style.position='absolute';
-                   list.style.display='block';
-                  }
-                  }
-                  function qMenu() {
-                   list.style.position='absolute';
-                   list.style.display='block';
-                  }
-                   
-                 </script>
-        </nav>
-        <!-- <section id="jbNav" class="w-full h-[5rem]"  ></section> -->
-        <section id="wellcome-text">
-            <div class="flex justify-center bg-gradient-to-b from-orange-300 px-[1rem] sm:px-[1rem] md:px-[2.5rem] lg:px-[5rem] xl:px-[5rem] py-[2rem] sm:py-[5rem] md:py-[5rem] lg:py-[5rem] xl:py-[10rem]">
-                <div
-                    class="py-[8.9rem] overflow-x-auto min-h-[15rem] h-auto w-[75rem] text-lg sm:text-2xl md:text-4xl lg:text-6xl xl:text-8xl flex flex-wrap justify-center items-center md:px-16"
-                    data-aos="fade-left"
-                    data-aos-offset="300"
-                    data-aos-easing="ease-in-out"
-                >
-                    Hello ,<br />
-                    <%= user.user_name %>
-                </div>
-            </div>
-        </section>
-        <label id="Profile" class="flex justify-center md:text-3xl text-md pt-5 text-white">Easily manage your Profile</label>
-        <!-- User-nav => template render using js -->
-        <section > 
-           <div class="hidden min-[610px]:flex max-h-[60rem] flex justify-center px-[1rem] sm:px-[1rem] md:px-[.5rem]  lg:p-0   pt-[1rem] sm:pt-[2.5rem] md:pt-[2.5rem] lg:pt-[2.5rem] xl:pt-[5rem] pb-[2rem] sm:pb-[5rem] md:pb-[5rem] lg:pb-[5rem] xl:pb-[10rem]">
-            <div class="px-[0.5rem] md:px-[2rem] py-[2rem] md:p-[1.5rem] flex justify-center items-center">
-                <navbar class="bg-white min-[610px]:w-[10rem] lg:h-[25rem] lg:w-[20rem] p-4 rounded-xl border-slate-300 border-4">
-                    <!-- <div class="flex justify-center"></div> -->
-                <% if(user.avatar.data){ %>
-                <img class="rounded-full h-12 w-12 bg-cover"src="data:image/<%=user.avatar.contentType%>;base64,<%=user.avatar.data.toString('base64')%>">
-                <% }else{ %>
-                    <img class="rounded-full h-12 w-12 bg-cover" src='https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png'/>
-                <% } %>
+    <!-- </ul>
+        </nav> -->
+    <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
+      <ul class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 float-left hover:ab">
+        <a href="#end"><img src="../public/favicon/fav2/favicon.ico" /></a>
+      </ul>
+      <ul class="hidden md:inline-flex justify-center bg-black">
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../home">Home</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../about">About</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../search-employee/search">Search employee</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../search-job/search">Search job</a>
+        </li>
+        <!-- rest bar -->
+        <li class="w-0 md:w-[10rem]"></li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../user/login">Login</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../user/signup">SignUp</a>
+        </li>
+      </ul>
+      <ul class="w-auto"></ul>
+      <ul
+        class="float-right md:hidden p-6 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg"
+        id="menu"
+        onclick="Menu()"
+        onblur="qMenu()"
+      >
+        Menu
+      </ul>
+      <!-- Menu-->
+      <ul class="hidden justify-center block w-full bg-black right-0 top-[4rem]" id="list">
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../home">Home</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../about">About</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../search-employee/search">Search employee</a>
+        </li>
+        <li
+          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg"
+        >
+          <a href="../search-job/search">Search job</a>
+        </li>
+        <!-- rest bar -->
+        <li class="w-0 min-[930px]:w-[10rem]"></li>
+        <li
+          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg"
+        >
+          <a href="../user/login">Login</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="../user/signup">SignUp</a>
+        </li>
+      </ul>
 
-                    <!-- <div ><%user.avatar%></div> -->
-                    <!-- onerror="this.src='https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png'" -->
-                    <button onclick="Account()" id="prev" titles="Manage credential,signout,change avatar,email,password" class="my-2 custom-button"><a href="#Profile">Account</a></button><br />
-                    <button onclick="DashBoard()" id="prev" titles="Your profile visible on search-employee" class="my-2 custom-button"><a href="#Profile">DashBoard</a></button><br />
-                    <button onclick="EditProfile()" id="prev" titles="Additional Personal details" class="my-2 custom-button"><a href="#Profile">Edit Profile</a></button><br />
-                    <button onclick="Application()" id="prev" titles="Additional Personal details" class="my-2 custom-button"><a href="#Profile">Application</a></button><br />
-                    <!-- <button onclick="Account()" titles="Manage credential,signout,change avatar,email,password" class="my-2 custom-button"><a href="#Profile">Help and support</a></button><br />
+      <script>
+        const menu = document.getElementById("menu");
+        const list = document.getElementById("list");
+        function Menu() {
+          if (list.style.position === "absolute") {
+            list.style.position = "relative";
+            list.style.display = "none";
+          } else {
+            list.style.position = "absolute";
+            list.style.display = "block";
+          }
+        }
+        function qMenu() {
+          list.style.position = "absolute";
+          list.style.display = "block";
+        }
+      </script>
+    </nav>
+    <!-- <section id="jbNav" class="w-full h-[5rem]"  ></section> -->
+    <section id="wellcome-text">
+      <div
+        class="flex justify-center bg-gradient-to-b from-orange-300 px-[1rem] sm:px-[1rem] md:px-[2.5rem] lg:px-[5rem] xl:px-[5rem] py-[2rem] sm:py-[5rem] md:py-[5rem] lg:py-[5rem] xl:py-[10rem]"
+      >
+        <div
+          class="py-[8.9rem] overflow-x-auto min-h-[15rem] h-auto w-[75rem] text-lg sm:text-2xl md:text-4xl lg:text-6xl xl:text-8xl flex flex-wrap justify-center items-center md:px-16"
+          data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-out"
+        >
+          Hello ,<br />
+          <%= user.user_name %>
+        </div>
+      </div>
+    </section>
+    <label id="Profile" class="flex justify-center md:text-3xl text-md pt-5 text-white mb-4">Easily manage your Profile</label>
+    <!-- User-nav => template render using js -->
+    <section>
+      <div
+        class="hidden min-[610px]:flex max-h-[60rem] flex justify-center px-[1rem] sm:px-[1rem] md:px-[.5rem] lg:p-0 pt-[1rem] sm:pt-[2.5rem] md:pt-[2.5rem] lg:pt-[2.5rem] xl:pt-[5rem] pb-[2rem] sm:pb-[5rem] md:pb-[5rem] lg:pb-[5rem] xl:pb-[10rem]"
+      >
+        <div class="px-[0.5rem] md:px-[2rem] py-[2rem] md:p-[1.5rem] flex justify-center items-center">
+          <navbar class="bg-white min-[610px]:w-[10rem] lg:h-[25rem] lg:w-[20rem] p-4 rounded-xl border-slate-300 border-4">
+            <!-- <div class="flex justify-center"></div> -->
+            <% if(user.avatar.data){ %>
+            <img
+              class="rounded-full h-12 w-12 bg-cover"
+              src="data:image/<%=user.avatar.contentType%>;base64,<%=user.avatar.data.toString('base64')%>"
+            />
+            <% }else{ %>
+            <img
+              class="rounded-full h-12 w-12 bg-cover"
+              src="https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png"
+            />
+            <% } %>
+
+            <!-- <div ><%user.avatar%></div> -->
+            <!-- onerror="this.src='https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png'" -->
+            <button onclick="Account()" id="prev" titles="Manage credential,signout,change avatar,email,password" class="my-2 custom-button">
+              <a href="#Profile">Account</a></button
+            ><br />
+            <button onclick="DashBoard()" id="prev" titles="Your profile visible on search-employee" class="my-2 custom-button">
+              <a href="#Profile">DashBoard</a></button
+            ><br />
+            <button onclick="EditProfile()" id="prev" titles="Additional Personal details" class="my-2 custom-button">
+              <a href="#Profile">Edit Profile</a></button
+            ><br />
+            <button onclick="Application()" id="prev" titles="Additional Personal details" class="my-2 custom-button">
+              <a href="#Profile">Application</a></button
+            ><br />
+            <!-- <button onclick="Account()" titles="Manage credential,signout,change avatar,email,password" class="my-2 custom-button"><a href="#Profile">Help and support</a></button><br />
                     <button onclick="Account()" titles="Manage credential,signout,change avatar,email,password" class="my-2 custom-button"><a href="#Profile">Blog</a></button><br />
                     <button onclick="Account()" titles="Manage credential,signout,change avatar,email,password" class="my-2 custom-button"><a href="#Profile">Contact</a></button><br />
                     <button onclick="Account()" titles="Manage credential,signout,change avatar,email,password" class="my-2 custom-button"><a href="#Profile">Support Tools</a></button> -->
-                </navbar>
-            </div>
-            <pre class="bg-black min-h-[30rem] min-[610px]:w-[2px]"></pre>
-            <div class="px-[0.5rem] py-[2rem] md:p-[2.5rem] w-[70rem]" id="main_container">
-                <div id="template" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-out" class="bg-white min-[350px]:w-[25rem] min-[610px]:w-full  h-full border-slate-400 border-4 border-solid p-4 md:p-14 max-h-[50rem] overflow-y-auto ">
-                    <p class="text-3xl">Click on navbar options to view in this block!!</p>
-                </div>
-            </div>
-           </div>
-           
-        </section>
-        <section 
-            class="hidden max-[610px]:block max-h-[60rem] max-[425px]:text-md ">
-            <div class="px-[0.5rem]  md:p-[1.5rem] w-full text-md min-w-[25rem]">
-                <navbar class="inline-flex bg-white  w-full p-4  border-slate-300 border-2 text-sm">
-                    <!-- <div class="flex justify-center"></div> -->
-                <% if(user.avatar.data){ %>
-                <img class="rounded-full h-12 w-12 bg-cover"src="data:image/<%=user.avatar.contentType%>;base64,<%=user.avatar.data.toString('base64')%>">
-                <% }else{ %>
-                    <img class="rounded-full h-12 w-12 bg-cover mx-2" src='https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png'/>
-                <% } %>
+          </navbar>
+        </div>
+        <pre class="bg-black min-h-[30rem] min-[610px]:w-[2px]"></pre>
+        <div class="px-[0.5rem] py-[2rem] md:p-[2.5rem] w-[70rem] overflow-x-hidden" id="main_container">
+          <div
+            id="template"
+            data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-out"
+            class="bg-white min-[350px]:w-[25rem] min-[610px]:w-full h-full border-slate-400 border-4 border-solid p-4 md:p-14 max-h-[50rem] overflow-y-auto"
+          >
+            <p class="text-3xl">Click on navbar options to view in this block!!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hidden max-[610px]:block max-h-[60rem] max-[425px]:text-md">
+      <div class="px-[0.5rem] md:p-[1.5rem] w-full text-md min-w-[15rem]">
+        <navbar class="inline-flex bg-white w-full p-4 border-slate-300 border-2 text-sm">
+          <!-- <div class="flex justify-center"></div> -->
+          <% if(user.avatar.data){ %>
+          <img
+            class="rounded-full h-12 w-12 bg-cover"
+            src="data:image/<%=user.avatar.contentType%>;base64,<%=user.avatar.data.toString('base64')%>"
+          />
+          <% }else{ %>
+          <img
+            class="rounded-full h-12 w-12 bg-cover mx-2"
+            src="https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png"
+          />
+          <% } %>
 
-                    <!-- <div ><%user.avatar%></div> -->
-                    <!-- onerror="this.src='https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png'" -->
-                    <button onclick="Account()" id="prev" titles="Manage credential,signout,change avatar,email,password" class="m-2 custom-button"><a href="#Profile">Account</a></button><br />
-                    <button onclick="DashBoard()" id="prev" titles="Your profile visible on search-employee" class="my-2 custom-button"><a href="#Profile">DashBoard</a></button><br />
-                    <button onclick="EditProfile()" id="prev" titles="Additional Personal details" class="m-2 custom-button"><a href="#Profile">Edit Profile</a></button><br />
-                    <button onclick="Application()" id="prev" titles="Additional Personal details" class="m-2 custom-button"><a href="#Profile">Application</a></button><br />
-                </navbar>
-            </div>
-            
-            
-            <div class="px-[0.5rem] py-[1rem] md:p-[2.5rem] " id="main_container">
-                <div id="template" class="bg-white min-w-[25rem] w-full min-[610px]:w-full  h-full border-slate-400 border-4 border-solid p-4 md:p-14  max-h-[50rem] overflow-y-auto ">
-                    <p class="text-md">Click on navbar options to view in this block!!</p>
-                </div>
-            </div>
-            
-        </section>
-        <!-- Navbar script -->
-        <!-- 
+          <!-- <div ><%user.avatar%></div> -->
+          <!-- onerror="this.src='https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png'" -->
+          <button onclick="Account()" id="prev" titles="Manage credential,signout,change avatar,email,password" class="m-2 custom-button">
+            <a href="#Profile" class="max-[400px]:text-[.7rem]">Account</a></button
+          ><br />
+          <button onclick="DashBoard()" id="prev" titles="Your profile visible on search-employee" class="my-2 custom-button">
+            <a href="#Profile" class="max-[400px]:text-[.7rem]">DashBoard</a></button
+          ><br />
+          <button onclick="EditProfile()" id="prev" titles="Additional Personal details" class="m-2 custom-button">
+            <a href="#Profile" class="max-[400px]:text-[.7rem]">Edit Profile</a></button
+          ><br />
+          <button onclick="Application()" id="prev" titles="Additional Personal details" class="m-2 custom-button">
+            <a href="#Profile" class="max-[400px]:text-[.7rem]">Application</a></button
+          ><br />
+        </navbar>
+      </div>
+
+      <div class="px-[0.5rem] py-[1rem] md:p-[2.5rem]" id="main_container">
+        <div
+          id="template"
+          class="bg-white min-w-[15rem] w-full min-[610px]:w-full h-full border-slate-400 border-4 border-solid p-4 md:p-14 max-h-[50rem] overflow-y-auto"
+        >
+          <p class="text-md">Click on navbar options to view in this block!! <br />NOT WORKING ?! CHANGE TO DESKTOP</p>
+        </div>
+      </div>
+    </section>
+    <!-- Navbar script -->
+    <!-- 
             Navbar functions
             1)Account
             2)DashBoard
             3)Edit Profile
         -->
-        <script>
+    <script>
+      const User_name = "<%= user.user_name %>";
+      const Email = "<%= user.email %>";
+      let Avatar;
+      ("<% if(user.avatar.data){ %>");
+      Avatar = "data:image/<%=user.avatar.contentType%>;base64,<%=user.avatar.data.toString(`base64`)%>";
+      ("<%}else{%>");
+      Avatar = "../public/images/default-user.svg";
+      ("<% } %>");
+      // tempData.innerHTML="<img id='avatar' class='rounded-full h-12 w-12 bg-cover' onerror='this.src=`https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png`'/>"
+      let jbNav = Boolean("<%= user.preference.jbNav %>" === "true" ? true : false);
+      let hellotxt = Boolean("<%= user.preference.hellotxt %>" === "true" ? true : false);
+      let uNav = Boolean("<%= user.preference.uNav %>" === "true" ? true : false);
+      let prevTab = Boolean("<%= user.preference.prevTab %>" === "true" ? true : false);
+      const token = "<%= user.token %>";
 
+      const fullname = "<%= user.details.fullname %>";
+      const graduation = "<%= user.details.graduation %>";
+      const skills = "<%= user.details.skills %>";
+      const workExp = "<%= user.details.workExp %>";
+      const achivments = "<%= user.details.achivments %>";
+      const address = "<%= user.details.address %>";
+      const DOB = "<%= user.details.DOB %>";
+      const date = new Date(DOB);
 
+      const day = date.getDate().toString().padStart(2, "0");
+      const month = (date.getMonth() + 1).toString().padStart(2, "0");
+      const year = date.getFullYear().toString();
 
+      const formattedDate = `${year}-${month}-${day}`;
+      const contactNo = "<%= user.details.contactNo %>";
+      const links = "<%= user.details.links %>";
+      const latitude = "<%= user.details.location.coordinates[0] %>";
+      const longitude = "<%= user.details.location.coordinates[1] %>";
 
-            const User_name='<%= user.user_name %>';
-            const Email='<%= user.email %>';
-            let Avatar;
-            '<% if(user.avatar.data){ %>'
-             Avatar="data:image/<%=user.avatar.contentType%>;base64,<%=user.avatar.data.toString(`base64`)%>";
-            '<%}else{%>'
-             Avatar="../public/images/default-user.svg";
-             '<% } %>'
-            // tempData.innerHTML="<img id='avatar' class='rounded-full h-12 w-12 bg-cover' onerror='this.src=`https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png`'/>"
-            let jbNav=Boolean(('<%= user.preference.jbNav %>'==='true')?true:false);
-            let hellotxt=Boolean(('<%= user.preference.hellotxt %>'==='true')?true:false);
-            let uNav=Boolean(('<%= user.preference.uNav %>'==='true')?true:false);
-            let prevTab=Boolean(('<%= user.preference.prevTab %>'==='true')?true:false);
-            const token = '<%= user.token %>'
+      window.onload = function preference() {
+        console.log(links);
+        const elements = document.querySelectorAll("#jbNav");
+        const prevTitle = document.querySelectorAll("#prev");
+        jbNav
+          ? elements.forEach((element) => {
+              element.style.display = "block";
+            })
+          : elements.forEach((element) => {
+              element.style.display = "none";
+            });
 
-            const fullname ='<%= user.details.fullname %>'
-            const graduation='<%= user.details.graduation %>';
-            const skills ='<%= user.details.skills %>'
-            const workExp ='<%= user.details.workExp %>'
-            const achivments ='<%= user.details.achivments %>'
-            const address ='<%= user.details.address %>'
-            const DOB='<%= user.details.DOB %>';
-            const date = new Date(DOB);
+        hellotxt
+          ? (document.getElementById("wellcome-text").style.display = "block")
+          : (document.getElementById("wellcome-text").style.display = "none");
 
-            const day = date.getDate().toString().padStart(2, '0');
-            const month = (date.getMonth() + 1).toString().padStart(2, '0');
-            const year = date.getFullYear().toString();
+        prevTab
+          ? prevTitle.forEach((ele) => {
+              ele.classList.add("custom-button");
+            })
+          : prevTitle.forEach((ele) => {
+              ele.classList.remove("custom-button");
+            });
+      };
 
-            const formattedDate = `${year}-${month}-${day}`;
-            const contactNo='<%= user.details.contactNo %>'
-            const links='<%= user.details.links %>'
-            const latitude='<%= user.details.location.coordinates[0] %>'
-            const longitude='<%= user.details.location.coordinates[1] %>'   
-           
-            window.onload =function preference(){
-                console.log(links);
-                const elements = document.querySelectorAll('#jbNav');
-                const prevTitle= document.querySelectorAll('#prev');
-                        (jbNav? 
-                            elements.forEach(element => {
-                                element.style.display = 'block';
-                            })
-                        :   elements.forEach(element => {
-                                element.style.display = 'none';
-                            })
-                        );
-                        
-                        (hellotxt?
-                            (document.getElementById('wellcome-text').style.display="block")
-                            :
-                            (document.getElementById('wellcome-text').style.display="none")
-                        );
+      function jobNav() {
+        const jbNavFlage = document.getElementById("jbNavC").checked;
+        const elements = document.querySelectorAll("#jbNav");
+        if (jbNavFlage) {
+          elements.forEach((element) => {
+            element.style.display = "block";
+          });
 
-                        (prevTab?
-                            (prevTitle.forEach((ele)=>{ 
-                    ele.classList.add('custom-button');
-                    }))
-                            :   
-                           (prevTitle.forEach((ele)=>{
-                    ele.classList.remove('custom-button');
-                    }))
-                        );
+          document.getElementById("jbNavC").value = true;
+        } else {
+          elements.forEach((element) => {
+            element.style.display = "none";
+          });
 
-                      
+          document.getElementById("jbNavC").value = false;
+        }
+        // setTimeout(function(){
+        //         (jbNav?
+        //             elements.forEach(element => {
+        //                 element.style.display = 'block';
+        //             })
+        //         :   elements.forEach(element => {
+        //                 element.style.display = 'none';
+        //             })
+        //         )}, 5000);
+      }
+      function welcometxt() {
+        const welcometxtFlage = document.getElementById("hellotxtC").checked;
 
-                     
-            }
-            
-            function jobNav(){
-                const jbNavFlage=document.getElementById("jbNavC").checked;
-                const elements = document.querySelectorAll('#jbNav');
-                if(jbNavFlage) {
-                    elements.forEach(element => {
-                    element.style.display = 'block';
-                    });
-                    
-                    document.getElementById("jbNavC").value=true;
-                     
+        if (welcometxtFlage) {
+          document.getElementById("wellcome-text").style.display = "block";
+          document.getElementById("hellotxtC").value = true;
+        } else {
+          document.getElementById("wellcome-text").style.display = "none";
+          document.getElementById("hellotxtC").value = false;
+        }
+        // }setTimeout(function(){
+        //         (hellotxt?document.getElementById('wellcome-text').style.display="block":document.getElementById('wellcome-text').style.display="none")}, 5000);
+      }
+      function previewTab() {
+        // const prevFlage=document.getElementById("prevC").checked;
+        // console.log(document.querySelectorAll('#prev'))
+        const checkbox = document.getElementById("prevC");
+        const button = document.querySelectorAll("#prev");
 
-                }
-                else{
-                     
-                    elements.forEach(element => {
-                    element.style.display = 'none';
-                    });
-                   
-                    document.getElementById("jbNavC").value=false;
-                     
-                }
-                // setTimeout(function(){
-                //         (jbNav? 
-                //             elements.forEach(element => {
-                //                 element.style.display = 'block';
-                //             })
-                //         :   elements.forEach(element => {
-                //                 element.style.display = 'none';
-                //             })
-                //         )}, 5000);
-                
-             }
-            function welcometxt(){
-                 
-                const welcometxtFlage=document.getElementById("hellotxtC").checked;
-                
-                if(welcometxtFlage) {
-                    document.getElementById('wellcome-text').style.display="block";
-                    document.getElementById("hellotxtC").value=true;
-                }
-                else{
-                    document.getElementById('wellcome-text').style.display="none";
-                    document.getElementById("hellotxtC").value=false;
-                }
-                // }setTimeout(function(){
-                //         (hellotxt?document.getElementById('wellcome-text').style.display="block":document.getElementById('wellcome-text').style.display="none")}, 5000);
-             }
-            function previewTab(){
-                // const prevFlage=document.getElementById("prevC").checked;
-                // console.log(document.querySelectorAll('#prev'))
-                const checkbox = document.getElementById('prevC');
-                const button = document.querySelectorAll('#prev');
+        if (checkbox.checked) {
+          button.forEach((ele) => {
+            ele.classList.add("custom-button");
+          });
+          document.getElementById("prevC").value = true;
+        } else {
+          button.forEach((ele) => {
+            ele.classList.remove("custom-button");
+          });
+          document.getElementById("prevC").value = false;
+        }
+        // setTimeout(function(){
+        //         (prevTab?document.getElementById('wellcome-text').style.display="block":document.getElementById('wellcome-text').style.display="none")}, 5000);
+      }
+      function fade_out(name) {
+        setTimeout(function () {
+          document.getElementById(name).style.display = "none";
+        }, 1000);
+      }
+      function contactNoValidate() {
+        var pattern = new RegExp(/^\d{10}$/);
 
-                if (checkbox.checked) {
-                    button.forEach((ele)=>{ 
-                    ele.classList.add('custom-button');
-                    });
-                    document.getElementById('prevC').value=true;
-                } else {
-                    button.forEach((ele)=>{
-                    ele.classList.remove('custom-button');
-                    });
-                    document.getElementById('prevC').value=false;
-                }
-                // setTimeout(function(){
-                //         (prevTab?document.getElementById('wellcome-text').style.display="block":document.getElementById('wellcome-text').style.display="none")}, 5000);
-             }
-            function fade_out(name) {
-                setTimeout(function(){document.getElementById(name).style.display="none"}, 1000);
-            }
-            function contactNoValidate() {
-                    var pattern = new RegExp(/^\d{10}$/);
+        if (pattern.test(document.getElementById("ContactNo").value)) {
+          document.getElementById("error").innerHTML = "valid contactno";
+          document.getElementById("error").style = "color:green";
+          fade_out("error");
 
-                    if (pattern.test(document.getElementById('ContactNo').value)) {
-                        document.getElementById("error").innerHTML="valid contactno";
-                        document.getElementById("error").style="color:green";
-                        fade_out("error");
-                         
-                        return true;
-                    }
-                    else {
-                        document.getElementById("error").innerHTML="not valid contactno";
-                   
-                        document.getElementById("error").style="color:red"
-                        return false;
-                    }
-                }
-            function avatarChange(){
-                 // Get the file input and the form
-                const fileInput = document.getElementById("update_image");
-                const form = document.getElementById('my_form');
-                console.log(fileInput,form)
-                // Add an event listener to the file input
-                fileInput.addEventListener('change', function() {
-                // If a file has been selected
-                    if (fileInput.files.length > 0) {
-                        // Submit the form
-                        form.submit();
-                    }
-                })
-                ;}
-            // function enable(id) {
-            //         document.getElementById(id).disabled = false;
-            //     }
-            
-            function Account() {
-                    const tempData = document.getElementById("template");
-           
-                    tempData.innerHTML = `
+          return true;
+        } else {
+          document.getElementById("error").innerHTML = "not valid contactno";
+
+          document.getElementById("error").style = "color:red";
+          return false;
+        }
+      }
+      function avatarChange() {
+        // Get the file input and the form
+        const fileInput = document.getElementById("update_image");
+        const form = document.getElementById("my_form");
+        console.log(fileInput, form);
+        // Add an event listener to the file input
+        fileInput.addEventListener("change", function () {
+          // If a file has been selected
+          if (fileInput.files.length > 0) {
+            // Submit the form
+            form.submit();
+          }
+        });
+      }
+      // function enable(id) {
+      //         document.getElementById(id).disabled = false;
+      //     }
+
+      function Account() {
+        const tempData = document.getElementById("template");
+
+        tempData.innerHTML =
+          `
 <section>
     <legend >Account details:
         <form action="/user/login" method="get" class="inline">
@@ -430,14 +445,18 @@
         </form>
     </legend><br>
     <div class="bg-slate-100 m-4">
-        <form action="/user/reset_avatar?token=`+token+`" method="post" id='my_form' enctype="multipart/form-data">
+        <form action="/user/reset_avatar?token=` +
+          token +
+          `" method="post" id='my_form' enctype="multipart/form-data">
         <div class="justify-start flex items-center p-2">
             <label class="m-2">Avatar : </label>
             <img class="rounded-full h-12 w-12 bg-cover" id="avatar" onerror="this.src='../public/images/default-user.svg'" />
             <label  class="w-5 h-5 m-2 bg-[url('/../public/images/edit-icon.svg')] bg-cover"  ><input onclick="avatarChange()" id="update_image" type="file" name="avatar" class="hidden"><pre></pre> </label>
         </div>
         </form>
-        <form action="/user/reset_email?token=`+token+`" method="post" >
+        <form action="/user/reset_email?token=` +
+          token +
+          `" method="post" >
             <div class="justify-start flex items-center p-2">
                 <label class="m-2">Email:</label>
                 <input id="email" type="text" class="  px-2" name="email" value="<%= user.email  %>" disabled />
@@ -453,16 +472,34 @@
 </section>
 <section>
   <label>Adjust preference:</label>
-  <form action="/user/set_prefrences?token=`+token+`" method="post">
+  <form action="/user/set_prefrences?token=` +
+          token +
+          `" method="post">
     <div class="bg-slate-100 m-4 p-2">
       <label>jobgeek Navbar :</label>
-      <input type="checkbox" onclick="jobNav()" name="jbNav" value=`+jbNav+` id="jbNavC" `+(jbNav?"checked":"")+` ><br>
+      <input type="checkbox" onclick="jobNav()" name="jbNav" value=` +
+          jbNav +
+          ` id="jbNavC" ` +
+          (jbNav ? "checked" : "") +
+          ` ><br>
       <label>welcome Text :</label>
-      <input type="checkbox" onclick="welcometxt()" name="hellotxt" value=`+hellotxt+` id="hellotxtC"`+(hellotxt?"checked":"")+` ><br>
+      <input type="checkbox" onclick="welcometxt()" name="hellotxt" value=` +
+          hellotxt +
+          ` id="hellotxtC"` +
+          (hellotxt ? "checked" : "") +
+          ` ><br>
       <label>user navbar :</label>
-      <input type="checkbox" name="uNav" value=`+uNav+` `+(uNav?"checked":"")+`><br>
+      <input type="checkbox" name="uNav" value=` +
+          uNav +
+          ` ` +
+          (uNav ? "checked" : "") +
+          `><br>
       <label>Preview-tab :</label>
-      <input type="checkbox"  onclick="previewTab()" name="prevTab" value=`+prevTab+` id="prevC" `+(prevTab?"checked":"")+`><br>
+      <input type="checkbox"  onclick="previewTab()" name="prevTab" value=` +
+          prevTab +
+          ` id="prevC" ` +
+          (prevTab ? "checked" : "") +
+          `><br>
       <legend>Choose templates:</legend>
         <label for="view1">view1</label>
         <input type="radio" name="nav_view" id="view1" value="view1" checked >
@@ -475,17 +512,16 @@
   </form>
 </section>
             `;
-           
-                    document.getElementById("main_container").append(tempData);
-                    document.getElementById("avatar").setAttribute("src",Avatar);
-                }
 
+        document.getElementById("main_container").append(tempData);
+        document.getElementById("avatar").setAttribute("src", Avatar);
+      }
 
-            //DashBoard functions
-            function JobOffer(){
-                    const tempData = document.getElementById("dashboardTemp");
-                    
-                    tempData.innerHTML = `<div class="p-2 max-h-[25rem] overflow-y-auto">
+      //DashBoard functions
+      function JobOffer() {
+        const tempData = document.getElementById("dashboardTemp");
+
+        tempData.innerHTML = `<div class="p-2 max-h-[25rem] overflow-y-auto">
                          
                     <% joboffers.forEach((row) => {
                         row.forEach((item) => { %>
@@ -498,13 +534,12 @@
                     <% }); %>
                     
                      </div>`;
-                    document.getElementById("dashboardMain").append(tempData);
-                     
-                }
-            function Status(){
-                    const tempData = document.getElementById("dashboardTemp");
-                    
-                    tempData.innerHTML = ` 
+        document.getElementById("dashboardMain").append(tempData);
+      }
+      function Status() {
+        const tempData = document.getElementById("dashboardTemp");
+
+        tempData.innerHTML = ` 
                         <div class="p-2 max-h-[25rem] overflow-y-auto">
 
                             <div class="rounded-lg bg-white shadow-md shadow-inset flex items-center  justify-between h-2">
@@ -519,17 +554,20 @@
                                 </div>
                         </div>
                      `;
-                    document.getElementById("dashboardMain").append(tempData);
-                }
-            function Nearby(){
-                    const tempData = document.getElementById("dashboardTemp");
-                  
-                    tempData.innerHTML = `
+        document.getElementById("dashboardMain").append(tempData);
+      }
+      function Nearby() {
+        const tempData = document.getElementById("dashboardTemp");
+
+        tempData.innerHTML =
+          `
                     <% if(nearby[0]){ %>
                         <div class="p-2 max-h-[25rem] overflow-y-auto">
                             <h1 class="flex justify-center bg-slate-200">Jobs Within 15km to your location</h1>
                         <% nearby.forEach(function(el){ %>
-                            <form action="/user/apply?token=`+token+`" method="post">
+                            <form action="/user/apply?token=` +
+          token +
+          `" method="post">
                             <div class="rounded-lg bg-white shadow-md  m-2 shadow-inset ">
                                 <div class="flex items-center bg-slate-100 py-2 px-8">
                                     <img class="h-16 w-16 rounded-full border-[.1rem] border-solid" src="data:image/<%= el.imageUrl.contentType %>;base64,<%=el.imageUrl.data.toString('base64') %>">
@@ -542,7 +580,9 @@
                                 </p><br>
                                 Salary:<%= el.salary %>
                                 <input value='<%= el.email %>' name="oemail" class="hidden">
-                                <input value="`+Email+`" name="uemail" class="hidden">
+                                <input value="` +
+          Email +
+          `" name="uemail" class="hidden">
                                 <button class="rounded-lg bg-blue-400 px-2 py-[.2rem] float-right">Apply</button>
                                 </div>
                             </div>
@@ -553,13 +593,13 @@
                         <label class="h-[10.5rem] w-full flex justify-center items-center">"Can't find nearby jobs,according to your coordinates "</label><br>
                     <%}%>
                         `;
-                    document.getElementById("dashboardMain").append(tempData);
-                }
-                
-            function DashBoard() {
-                const tempData = document.getElementById("template");
+        document.getElementById("dashboardMain").append(tempData);
+      }
 
-                tempData.innerHTML = `
+      function DashBoard() {
+        const tempData = document.getElementById("template");
+
+        tempData.innerHTML = `
                     <section class="w-full">
                         <div class="divided-x h-[4.5rem]  flex flex-row    bg-slate-200">
                             
@@ -573,14 +613,16 @@
                         </div>
                       
                     </section>`;
-                    document.getElementById("main_container").append(tempData);
-                }
-            function EditProfile() {
-                    const tempData = document.getElementById("template");
-                    
+        document.getElementById("main_container").append(tempData);
+      }
+      function EditProfile() {
+        const tempData = document.getElementById("template");
 
-                    tempData.innerHTML = `
-<form action="/user/set_details?token=`+token+`" method="post" enctype="multipart/form-data" class="w-[30rem] lg:w-auto">
+        tempData.innerHTML =
+          `
+<form action="/user/set_details?token=` +
+          token +
+          `" method="post" enctype="multipart/form-data" class="w-[30rem] lg:w-auto">
     <div class="grid grid-cols-4 lg:p-6 pt-0">
         <div class="col-span-4 text-gray-900 p-2">
             <h1><b>Profile page</b></h1>
@@ -589,16 +631,34 @@
         <hr class="col-span-4 bg-black my-2 h-0.5" />
 
         <label class="col-span-4 font-bold text-gray-700 flex" for="username">Full name</label>
-        <input name="fullname" value="`+fullname+`" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" id="username" type="text" placeholder="username" /> <label class="col-span-4 font-bold text-gray-700">Graduation</label>
-        <input name="graduation" value="`+graduation+`" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="text" /> <label class="col-span-4 font-bold text-gray-700">Skills</label>
-        <input name="skills" value="`+skills+`" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="text" /> <label class="col-span-4 font-bold text-gray-700">Work experiences</label>
-        <input name="workExp" value="`+workExp+`" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="text" /> <label class="col-span-4 font-bold text-gray-700">Achivement</label>
-        <input name="achivments" value="`+achivments+`" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="text" /> <label class="col-span-4 font-bold text-gray-700">Address</label>
-        <input name="address" value="`+address+`" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="text" /> <label class="col-span-4 font-bold text-gray-700">Birth date</label>
-        <input type="date" name="DOB" value=`+formattedDate+` id="date"  class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" /> <label class="col-span-4 font-bold text-gray-700">Contact no</label>
-        <input type="number" id="ContactNo" onkeyup="contactNoValidate()" name="contactNo" value="`+contactNo+`" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" />
+        <input name="fullname" value="` +
+          fullname +
+          `" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" id="username" type="text" placeholder="username" /> <label class="col-span-4 font-bold text-gray-700">Graduation</label>
+        <input name="graduation" value="` +
+          graduation +
+          `" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="text" /> <label class="col-span-4 font-bold text-gray-700">Skills</label>
+        <input name="skills" value="` +
+          skills +
+          `" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="text" /> <label class="col-span-4 font-bold text-gray-700">Work experiences</label>
+        <input name="workExp" value="` +
+          workExp +
+          `" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="text" /> <label class="col-span-4 font-bold text-gray-700">Achivement</label>
+        <input name="achivments" value="` +
+          achivments +
+          `" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="text" /> <label class="col-span-4 font-bold text-gray-700">Address</label>
+        <input name="address" value="` +
+          address +
+          `" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="text" /> <label class="col-span-4 font-bold text-gray-700">Birth date</label>
+        <input type="date" name="DOB" value=` +
+          formattedDate +
+          ` id="date"  class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" /> <label class="col-span-4 font-bold text-gray-700">Contact no</label>
+        <input type="number" id="ContactNo" onkeyup="contactNoValidate()" name="contactNo" value="` +
+          contactNo +
+          `" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" />
         <p id="error"></p>
-        <label class="col-span-4 font-bold text-gray-700">URL</label> <input name="links" value="`+links +`" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" /> <label class="col-span-4 font-bold text-gray-700">Resume</label>
+        <label class="col-span-4 font-bold text-gray-700">URL</label> <input name="links" value="` +
+          links +
+          `" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" /> <label class="col-span-4 font-bold text-gray-700">Resume</label>
         <input  name="resume" value="<%= user.resume %>" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="file" multiple="multiple" requi red/> <label class="col-span-4 font-bold text-gray-700">Certificates</label>
         <input  name="certificates" value="<%= user.certificates %>" class="col-span-4 font-bold text-gray-500 bg-gray-200 m-4 flex p-2" type="file" multiple="multiple" required/>
     </div>
@@ -609,10 +669,14 @@
         <label>Add co-ordinates manually</label> <br />
 
         <div>
-            <pre>Latitude  :<input name='latitude' id='latitude' class='bg-slate-100' type='text' onkeyup='map()' value=`+latitude+` /></pre>
+            <pre>Latitude  :<input name='latitude' id='latitude' class='bg-slate-100' type='text' onkeyup='map()' value=` +
+          latitude +
+          ` /></pre>
         </div>
         <div>
-            <pre>Longitude :<input name='longitude' id='longitude' class='bg-slate-100' type='text' onkeyup='map()' value=`+longitude+` /></pre>
+            <pre>Longitude :<input name='longitude' id='longitude' class='bg-slate-100' type='text' onkeyup='map()' value=` +
+          longitude +
+          ` /></pre>
         </div>
 
         <label>Double click here To find your co-ordinates :</label> <label onclick="getLocation();map();" class="bg-blue-600 text-white rounded-md p-2">Locate</label>
@@ -624,15 +688,16 @@
     </div>
 </form>
 `;
-                    document.getElementById("main_container").append(tempData);
- 
-                }
-            function Application(){
-                    const tempData = document.getElementById("template");
-                    
+        document.getElementById("main_container").append(tempData);
+      }
+      function Application() {
+        const tempData = document.getElementById("template");
 
-                    tempData.innerHTML = `
-<form action="/user/application?token=`+token+`" method="post" class="w-[30rem] lg:w-auto">
+        tempData.innerHTML =
+          `
+<form action="/user/application?token=` +
+          token +
+          `" method="post" class="w-[30rem] lg:w-auto">
     <div class="  lg:p-6 pt-0">
         <label for="title"> APPLICATION-TITLE: <br>
              <input type="text" id="title" placeholder="title" name="application_title" class="w-full font-bold text-gray-500 bg-gray-200 my-2 flex  p-2">
@@ -649,101 +714,112 @@
                 <input type="number" id="salary" placeholder="amount per month" name="salary" class="  font-bold text-gray-500 bg-gray-200 my-2 flex  p-2 w-1/3">
             </label>
 
-            <input type="text" id="salary" value="`+Email+`" name="uemail" class="hidden">
+            <input type="text" id="salary" value="` +
+          Email +
+          `" name="uemail" class="hidden">
 
         <button class="p-2 bg-green-500 text-white" type="submit">Activate</button>
     </div>
 </form>  `;
-                    document.getElementById("main_container").append(tempData);
-                }
+        document.getElementById("main_container").append(tempData);
+      }
+    </script>
+    <!-- location script -->
+    <script>
+      function map() {
+        // Set the longitude and latitude variables
+        let input1 = document.getElementById("latitude").value;
+        let input2 = document.getElementById("longitude").value;
 
-        </script>
-        <!-- location script -->
-        <script>
-            function map() {
-                // Set the longitude and latitude variables
-                let input1 = document.getElementById("latitude").value;
-                let input2 = document.getElementById("longitude").value;
+        // Parse the input values as numbers
+        let latitude = parseFloat(input1).toFixed(10);
+        let longitude = parseFloat(input2).toFixed(10);
 
-                // Parse the input values as numbers
-                let latitude = parseFloat(input1).toFixed(10);
-                let longitude = parseFloat(input2).toFixed(10);
+        const iframeUrl = `https://www.openstreetmap.org/export/embed.html?marker=${latitude},${longitude}`;
 
-                const iframeUrl = `https://www.openstreetmap.org/export/embed.html?marker=${latitude},${longitude}`;
+        // Get a reference to the iframe element
+        const iframe = document.querySelector("#map-iframe");
 
-                // Get a reference to the iframe element
-                const iframe = document.querySelector("#map-iframe");
+        // Set the src attribute of the iframe to the constructed URL
+        iframe.src = iframeUrl;
+      }
 
-                // Set the src attribute of the iframe to the constructed URL
-                iframe.src = iframeUrl;
-            }
+      var x = document.getElementById("demo");
 
-            var x = document.getElementById("demo");
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
 
-            function getLocation() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(showPosition, showError);
-                } else {
-                    x.innerHTML = "Geolocation is not supported by this browser.";
-                }
-            }
+      function showPosition(position) {
+        document.getElementById("latitude").value = position.coords.latitude;
+        document.getElementById("longitude").value = position.coords.longitude;
+        // x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+      }
 
-            function showPosition(position) {
-                document.getElementById("latitude").value = position.coords.latitude;
-                document.getElementById("longitude").value = position.coords.longitude;
-                // x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-            }
-
-            function showError(error) {
-                switch (error.code) {
-                    case error.PERMISSION_DENIED:
-                        x.innerHTML = "User denied the request for Geolocation.";
-                        break;
-                    case error.POSITION_UNAVAILABLE:
-                        x.innerHTML = "Location information is unavailable.";
-                        break;
-                    case error.TIMEOUT:
-                        x.innerHTML = "The request to get user location timed out.";
-                        break;
-                    case error.UNKNOWN_ERROR:
-                        x.innerHTML = "An unknown error occurred.";
-                        break;
-                }
-            }
-        </script>
-        <footer>
-            <section class="bg-gray-500 text-gray-100">
-                <ul class="justify-center">
-                    <li class="flex justify-center mx-4 py-5 font-bold">
-                        Copy right 2022-<a href="./Home.html" class="hover:underline">Job Geek</a>
-                        <p class="text-xs">TM</p>
-                        .All right received
-                    </li>
-                    <li class="flex justify-center mx-4 py-5">Address-baroda,varnama,Babaria institute of technology</li>
-                    <ul class="flex justify-center mx-4 py-5">
-                        <li class="h-6 w-6 mx-2">
-                            <a href="https://www.youtube.com/channel/UCpnW4eginLfg2rCcMjAn5dA?view_as=subscriber">
-                                <img class="h-6" src="https://www.freepnglogos.com/uploads/youtube-logo-transparent-10.png" width="200" alt="youtube logo transparent" />
-                            </a>
-                        </li>
-                        <li class="h-6 w-6 mx-2">
-                            <a href="https://www.facebook.com/babaria.institute/">
-                                <img class="h-6" src="https://www.freeiconspng.com/uploads/-van-de-laatste-nieuwsberichten-volg-ons-via-twitter-en-facebook-4.png" width="200" alt="Facebook new logo png" />
-                            </a>
-                        </li>
-                        <li class="h-2 w-6 mx-2">
-                            <a href="https://www.instagram.com/bits.edu.campus_official/?utm_source=ig_profile_share&igshid=15s3hwp5s8tp8">
-                                <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" />
-                            </a>
-                        </li>
-                    </ul>
-                </ul>
-            </section>
-        </footer>
-        <script>
-            AOS.init({
-                duration: 800,
-            });
-        </script>
-    </body>
+      function showError(error) {
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation.";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable.";
+            break;
+          case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out.";
+            break;
+          case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred.";
+            break;
+        }
+      }
+    </script>
+    <footer>
+      <section class="bg-gray-500 text-gray-100">
+        <ul class="justify-center">
+          <li class="flex justify-center mx-4 py-5 font-bold">
+            Copy right 2022-<a href="./Home.html" class="hover:underline">Job Geek</a>
+            <p class="text-xs">TM</p>
+            .All right received
+          </li>
+          <li class="flex justify-center mx-4 py-5">Address-baroda,varnama,Babaria institute of technology</li>
+          <ul class="flex justify-center mx-4 py-5">
+            <li class="h-6 w-6 mx-2">
+              <a href="https://www.youtube.com/channel/UCpnW4eginLfg2rCcMjAn5dA?view_as=subscriber">
+                <img
+                  class="h-6"
+                  src="https://www.freepnglogos.com/uploads/youtube-logo-transparent-10.png"
+                  width="200"
+                  alt="youtube logo transparent"
+                />
+              </a>
+            </li>
+            <li class="h-6 w-6 mx-2">
+              <a href="https://www.facebook.com/babaria.institute/">
+                <img
+                  class="h-6"
+                  src="https://www.freeiconspng.com/uploads/-van-de-laatste-nieuwsberichten-volg-ons-via-twitter-en-facebook-4.png"
+                  width="200"
+                  alt="Facebook new logo png"
+                />
+              </a>
+            </li>
+            <li class="h-2 w-6 mx-2">
+              <a href="https://www.instagram.com/bits.edu.campus_official/?utm_source=ig_profile_share&igshid=15s3hwp5s8tp8">
+                <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" />
+              </a>
+            </li>
+          </ul>
+        </ul>
+      </section>
+    </footer>
+    <script>
+      AOS.init({
+        duration: 800,
+      });
+    </script>
+  </body>
 </html>

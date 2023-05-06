@@ -15,7 +15,7 @@ exports.updateapplicationList = async (req, res) => {
     let page = Number(req.query.page) || 1;
     let limit = Number(req.query.limit) || 4;
     let skip = (page - 1) * limit;
-    console.log(page, limit, skip);
+    //console.log(page, limit, skip);
     const total_pages = Number();
 
     const data = await application
@@ -36,16 +36,16 @@ exports.updateapplicationList = async (req, res) => {
 //   try {
 //     res.render("createapplication_Page");
 //   } catch (err) {
-//     console.log(err);
+//     //console.log(err);
 //     res.end(err);
 //   }
 // };
 // exports.postImage = async (req, res) => {
 //   upload(req, res, (err) => {
 //     if (err) {
-//       console.log(err);
+//       //console.log(err);
 //     } else {
-//       console.log(req.body);
+//       //console.log(req.body);
 //       const newImage = new application({
 //         application_title: req.body.application_title,
 //         desc: req.body.desc,

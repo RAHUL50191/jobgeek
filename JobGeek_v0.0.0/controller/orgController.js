@@ -189,7 +189,7 @@ exports.orgHome = async (req, res) => {
     )
       .then((apc) => {
         // Do something with the array of job objects
-        console.log(apc);
+        //console.log(apc);
         if (orgdata) {
           res.render("orgHome", {
             org: orgdata,
@@ -198,7 +198,7 @@ exports.orgHome = async (req, res) => {
           });
           // res.status(200).send(
           //   nearby.forEach(function (el) {
-          //     console.log(el.application_title);
+          //     //console.log(el.application_title);
           //   })
           //);
         } else {
@@ -337,7 +337,7 @@ exports.updateAvatar = async (req, res) => {
   avatarUpload(req, res, async (err) => {
     try {
       const token = req.query.token;
-      console.log(req.file, req.body);
+      //console.log(req.file, req.body);
       const orgdata = await org.findOne({
         token: token,
       });
@@ -375,7 +375,7 @@ exports.resetPasswordPage = async (req, res) => {
 exports.resetPassword = async (req, res) => {
   try {
     const token = req.query.token;
-    console.log("inside post" + token);
+    //console.log("inside post" + token);
     const tokendata = await org.findOne({
       token: token,
     });
@@ -434,7 +434,7 @@ exports.setDetails = async (req, res) => {
 exports.postImage = async (req, res) => {
   postjobImg(req, res, (err) => {
     try {
-      console.log(req.body);
+      //console.log(req.body);
       const newImage = new job({
         job_title: req.body.job_title,
         desc: req.body.desc,

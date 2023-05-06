@@ -15,7 +15,7 @@ exports.updateJobList = async (req, res) => {
     let page = Number(req.query.page) || 1;
     let limit = Number(req.query.limit) || 4;
     let skip = (page - 1) * limit;
-    console.log(page, limit, skip);
+    //console.log(page, limit, skip);
     const total_pages = Number();
 
     const data = await job
@@ -43,9 +43,9 @@ exports.createJob_Page = async (req, res) => {
 // exports.postImage = async (req, res) => {
 //   upload(req, res, (err) => {
 //     if (err) {
-//       console.log(err);
+//       //console.log(err);
 //     } else {
-//       console.log(req.body);
+//       //console.log(req.body);
 //       const newImage = new job({
 //         job_title: req.body.job_title,
 //         desc: req.body.desc,

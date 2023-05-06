@@ -191,7 +191,7 @@ exports.userHome = async (req, res) => {
     )
       .then((jobs) => {
         // Do something with the array of job objects
-        console.log(jobs);
+        //console.log(jobs);
         if (userdata) {
           res.render("userHome", {
             user: userdata,
@@ -334,7 +334,7 @@ exports.updateAvatar = async (req, res) => {
   avatarUpload(req, res, async (err) => {
     try {
       const token = req.query.token;
-      console.log(req.file, req.body);
+      //console.log(req.file, req.body);
       const userdata = await user.findOne({
         token: token,
       });
@@ -373,7 +373,7 @@ exports.resetPasswordPage = async (req, res) => {
 exports.resetPassword = async (req, res) => {
   try {
     const token = req.query.token;
-    console.log("inside post" + token);
+    //console.log("inside post" + token);
     const tokendata = await user.findOne({
       token: token,
     });
@@ -394,7 +394,7 @@ exports.resetPassword = async (req, res) => {
 //preferences
 exports.setPrefrences = async (req, res) => {
   try {
-    console.log(req.body);
+    //console.log(req.body);
     const userdata = await user.findOneAndUpdate(
       { token: req.query.token },
       {
@@ -522,7 +522,7 @@ exports.postApplication = async (req, res) => {
     const applied = await application.findOne({ email: userdata.email });
     const latitude = userdata.details.location.coordinates[0];
     const longitude = userdata.details.location.coordinates[1];
-    console.log(req.body);
+    //console.log(req.body);
     if (userdata) {
       if (!applied) {
         const applicationForm = new application({
@@ -571,7 +571,7 @@ exports.postApplication = async (req, res) => {
 exports.userApplication = async (req, res) => {
   try {
     const token = req.query.token;
-    console.log(req.body);
+    //console.log(req.body);
     const userdata = await user.findOne({ email: req.body.uemail });
     const orgdata = await org.findOneAndUpdate(
       { email: req.body.oemail },

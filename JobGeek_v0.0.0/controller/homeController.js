@@ -15,7 +15,7 @@ exports.getInterview = async (req, res) => {
     const data = req.query;
     const mentor = req.query.mentor;
     const email = req.query.email;
-    console.log(data);
+    ////console.log(data);
     const orgdata = await Org.findOne({ email: email });
     if (orgdata) {
       res.render("interviewpage", { mentor: mentor });
