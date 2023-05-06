@@ -1,281 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="icon" type="image/x-icon" href="../public/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="../public/favicon/favicon-32x32.png" />
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gradient-to-r from-pink-500 to-sky-400 min-h-[100vh]  max-md:text-xs">
-  <style>
-    
-footer{
-      top:100%;
-      position: sticky;
-      width: 100%;
-      /* background-color: rgb(74, 45, 6); */
+  </head>
+  <body class="bg-gradient-to-r from-pink-500 to-sky-400 min-h-[100vh] max-md:text-xs">
+    <style>
+      footer {
+        top: 100%;
+        position: sticky;
+        width: 100%;
+        /* background-color: rgb(74, 45, 6); */
       }
-      .shadow-in{
-        
+      .shadow-in {
         box-shadow: inset -1px -1px 2px rgba(69, 69, 69, 0.5);
       }
-      html{
+      html {
         scroll-behavior: smooth;
       }
-      
-</style>
+    </style>
 
-  <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
-      <ul
-        class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 float-left hover:ab">
-        <a href="#end"><img src="../public/favicon/fav2/favicon.ico"></a>
+    <nav class="bg-black text-gray-100 justify-center flex sticky top-0 z-[1]">
+      <ul class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 float-left hover:ab">
+        <a href="#end"><img src="../public/favicon/fav2/favicon.ico" /></a>
       </ul>
-      <ul class="hidden md:inline-flex  justify-center  bg-black">
-         
-          <li
-              class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6  hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-              <a href="./home">Home</a>
-          </li>
-          <li
-              class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-              <a href="./about">About</a>
-          </li>
-          <li
-              class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-              <a href="/search-employee/search">Search employee</a>
-          </li>
-          <li
-              class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-              <a href="/search-job/search">Search job</a>
-          </li>
-          <!-- rest bar -->
-          <li class="w-0 md:w-[10rem] "></li>
-          <li
-          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+      <ul class="hidden md:inline-flex justify-center bg-black">
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="./home">Home</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="./about">About</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="/search-employee/search">Search employee</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="/search-job/search">Search job</a>
+        </li>
+        <!-- rest bar -->
+        <li class="w-0 md:w-[10rem]"></li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
           <a href="./user/login">Login</a>
-          </li>
-          <li 
-          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg">
           <a href="./user/signup">SignUp</a>
-          </li>
-          
+        </li>
       </ul>
-      <ul class="w-auto "></ul>
-      <ul class="float-right md:hidden  p-6 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg" id="menu" onclick="Menu()" onblur="qMenu()">Menu
+      <ul class="w-auto"></ul>
+      <ul
+        class="float-right md:hidden p-6 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-b-2 hover:pb-2 text-xs sm:text-base md:text-lg"
+        id="menu"
+        onclick="Menu()"
+        onblur="qMenu()"
+      >
+        Menu
       </ul>
-    <!-- Menu-->
-      <ul class="hidden justify-center block w-full  bg-black right-0 top-[4rem] " id="list">
-         <li
-             class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-             <a href="./home">Home</a>
-         </li>
-         <li
-             class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-             <a href="./about">About</a>
-         </li>
-         <li
-             class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-             <a href="/search-employee/search">Search employee</a>
-         </li>
-         <li
-             class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-             <a href="/search-job/search">Search job</a>
-         </li>
-         <!-- rest bar -->
-         <li class="w-0 min-[930px]:w-[10rem] "></li>
-         <li
-         class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-         <a href="./user/login">Login</a>
-         </li>
-         <li  
-         class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
-         <a href="./user/signup">SignUp</a>
-         </li>
-         
-     </ul>
-           
-          <script>
-            const menu=document.getElementById("menu");
-            const list=document.getElementById("list");
-            function Menu(){
-             if(list.style.position==="absolute"){
-             list.style.position='relative';
-             list.style.display='none';
+      <!-- Menu-->
+      <ul class="hidden justify-center block w-full bg-black right-0 top-[4rem]" id="list">
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="./home">Home</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="./about">About</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="/search-employee/search">Search employee</a>
+        </li>
+        <li
+          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg"
+        >
+          <a href="/search-job/search">Search job</a>
+        </li>
+        <!-- rest bar -->
+        <li class="w-0 min-[930px]:w-[10rem]"></li>
+        <li
+          class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:rounded-lg hover:rounded-lg hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg"
+        >
+          <a href="./user/login">Login</a>
+        </li>
+        <li class="p-2 xs:p-2 sm:p-2 md:p-4 lg:p-4 xl:p-6 hover:border-2 hover:pb-2 text-xs sm:text-base md:text-lg">
+          <a href="./user/signup">SignUp</a>
+        </li>
+      </ul>
+
+      <script>
+        const menu = document.getElementById("menu");
+        const list = document.getElementById("list");
+        function Menu() {
+          if (list.style.position === "absolute") {
+            list.style.position = "relative";
+            list.style.display = "none";
+          } else {
+            list.style.position = "absolute";
+            list.style.display = "block";
+          }
+        }
+        function qMenu() {
+          list.style.position = "absolute";
+          list.style.display = "block";
+        }
+      </script>
+    </nav>
+    <!-- searchbar -->
+    <section class="flex justify-center p-2 md:p-[5rem] pb-[2.5rem]">
+      <div class="h-[3rem] w-[75rem] flex flex-wrap justify-center items-center md:px-16">
+        <div class="input-group relative flex flex-wrap items-stretch w-full h-full mb-4">
+          <input
+            type="search"
+            id="search"
+            class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            onkeydown="searchFunc(event)"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="button-addon2"
+          />
+        </div>
+        <script>
+          function searchFunc() {
+            let key = event.key;
+
+            console.log("The key was: " + key);
+
+            if (key === "Enter") {
+              // Do work
+              const searchdata = document.getElementById("search").value;
+              console.log(searchdata);
+              location.replace(`http://127.0.0.1:8000/search-job/search?name=${searchdata}&desc=&salary=`);
             }
-             else {
-             list.style.position='absolute';
-             list.style.display='block';
-            }
-            }
-            function qMenu() {
-             list.style.position='absolute';
-             list.style.display='block';
-            }
-             
-           </script>
-</nav>
-<!-- searchbar -->
-<section class="flex justify-center p-2 md:p-[5rem] pb-[2.5rem]">
-  <div class="h-[3rem] w-[75rem]  flex flex-wrap justify-center items-center md:px-16 ">
-    
-
-    <div class="input-group relative flex flex-wrap items-stretch w-full h-full mb-4">
-      <input type="search" id="search" class=" form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" onkeydown="searchFunc(event)" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
-    </div>
-    <script>
-      function searchFunc(){
-        let key = event.key;
-  
-        console.log("The key was: " + key)
-       
-        if (key === "Enter") {
-        // Do work
-         const searchdata=document.getElementById("search").value;
-         console.log(searchdata)
-        location.replace(`http://127.0.0.1:8000/search-job/search?name=${searchdata}&desc=&salary=`)
-
-      }
-    }
-    </script>
-  </div>
-  
-</section>
-
-<!-- field-card -->
-<label class="flex justify-center text-xl md:text-3xl pt-5 text-white">Find your field </label>
-<section class="flex justify-center md:px-[5rem] pb-[2.5rem]">
-  
-  <div class="h-auto min-h-[25rem] w-[75rem] flex flex-wrap justify-center items-center px-2 py-2 md:px-10 md:py-8">
-    <a href="/search-job/search?name=Accountant&desc=&salary=">
-      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex  justify-center items-center shadow-in">Accountant</div>
-    </a>
-    <a href="/search-job/search?name=Business analyst&desc=&salary=">
-      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Business analyst</div>
-    </a>
-    <a href="/search-job/search?name=Back-end dev&desc=&salary=">
-      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Back-end dev</div>
-    </a>
-    <a href="/search-job/search?name=Data analyst&desc=&salary=">
-      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Data analyst</div>
-    </a>
-    <a href="/search-job/search?name=Full-stack dev&desc=&salary=">
-      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Full-stack dev</div>
-    </a>
-    <a href="/search-job/search?name=Game dev&desc=&salary=">
-      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Game dev</div>
-    </a>
-    <a href="/search-job/search?name=Graphic designer&desc=&salary=">
-      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">Graphic designer</div>
-    </a>
-    <a href="/search-job/search?name=Software eng&desc=&salary=">
-      <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex  justify-center items-center">Software eng</div>
-    </a>
-  </div>
-  
-
-</section>
-<!-- interview template -->
-<label class="flex justify-center text-xl md:text-3xl pt-5 text-white max-[480px]:hidden">Mock Interview Test</label>
-<section class="flex justify-center md:px-[5rem] sm:px-[1rem] pb-[2.5rem] h-auto w-auto max-[480px]:hidden">
-  
-  <div class="h-auto xl:h-[40rem] lg:w-[75rem] sm:w-[60rem]  flex flex-wrap justify-center  px-10 py-8 sm:px-6">
-
-    <div class="h-[22.5rem] lg:h-[35rem] w-[30rem] lg:w-[62.5rem] xl:w-[75rem] min-[768px]:w-[40rem] w-auto rounded-lg bg-white block m-6 lg:m-10 p-6 lg:p-12 lg:py-10 px-8 sm:px-8shadow-md flex-inline          justify-center  shadow-in absolute">
-      <div class="w-[11.5rem] md:w-[24rem] right-[100%] h-[30%] md:h-[40%] bg-pink-400 mb-6 left-[0%]  relative">
-        <img src="./images/interview.jpeg" class=" h-full w-full lg:w-auto lg:object-cover lg:overflow-hidden lg:h-auto left-[0%]   ">
+          }
+        </script>
       </div>
-      <div class="w-[11.5rem] min-[768px]:w-[20rem] left-[0%]  relative">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat reprehenderit perferendis, illo iste quae molestias explicabo atque eaque, ad, repudiandae iusto eum saepe voluptas excepturi repellat ea accusantium ipsum vero?
+    </section>
+
+    <!-- field-card -->
+    <label class="flex justify-center text-xl md:text-3xl pt-5 text-white">Find your field </label>
+    <section class="flex justify-center md:px-[5rem] pb-[2.5rem]">
+      <div class="h-auto min-h-[25rem] w-[75rem] flex flex-wrap justify-center items-center px-2 py-2 md:px-10 md:py-8">
+        <a href="/search-job/search?name=Accountant&desc=&salary=">
+          <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex justify-center items-center shadow-in">
+            Accountant
+          </div>
+        </a>
+        <a href="/search-job/search?name=Business analyst&desc=&salary=">
+          <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">
+            Business analyst
+          </div>
+        </a>
+        <a href="/search-job/search?name=Back-end dev&desc=&salary=">
+          <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">
+            Back-end dev
+          </div>
+        </a>
+        <a href="/search-job/search?name=Data analyst&desc=&salary=">
+          <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">
+            Data analyst
+          </div>
+        </a>
+        <a href="/search-job/search?name=Full-stack dev&desc=&salary=">
+          <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">
+            Full-stack dev
+          </div>
+        </a>
+        <a href="/search-job/search?name=Game dev&desc=&salary=">
+          <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">
+            Game dev
+          </div>
+        </a>
+        <a href="/search-job/search?name=Graphic designer&desc=&salary=">
+          <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center">
+            Graphic designer
+          </div>
+        </a>
+        <a href="/search-job/search?name=Software eng&desc=&salary=">
+          <div class="h-[5rem] w-[12rem] rounded-lg bg-white block p-6 m-6 shadow-md hover:shadow-2xl flex justify-center items-center">
+            Software eng
+          </div>
+        </a>
       </div>
-    </div>
-    <!-- inlet desc -push page -->
-    <div class="h-[25rem] lg:h-[40rem] min-[768px]:left-[8rem]  xl:w-[35rem] w-auto rounded-lg bg-white block left-[6rem] lg:left-[10rem] shadow-md  flex-inline  bg-[#cfcfce]   justify-center p-4 lg:p-14 py-4 lg:py-12 relative max-[480px]:hidden" style="background-color: #cfcfcf;">
-    
-        <img src="./images/img1.jpeg" class="h-[40%] w-full bg-pink-400 mb-6 object-fill shadow-inner shadow-[3px]">
-      <form action="home/interview"  >
-      <div class="flex-wrap w-auto">
-        <!-- profession -->
-        <label class="block text-gray-600 text-xs lg:text-lg font-bold " for="profession">Profession</label>
-        <input class="shadow appearance-none border rounded w-full my-2 lg:py-2 lg:px-3 lg:my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline   lg:mb-4" id="username" type="text" placeholder="Profession" name="profession">
-        <!-- time -->
-        <!-- <label class="block text-gray-600 text-lg font-bold" for="time_schedule">Time schedule </label>
+    </section>
+    <!-- interview template -->
+    <label class="flex justify-center text-xl md:text-3xl pt-5 text-white max-[480px]:hidden">Mock Interview Test</label>
+    <section class="flex justify-center md:px-[5rem] sm:px-[1rem] pb-[2.5rem] h-auto w-auto max-[480px]:hidden">
+      <div class="h-auto xl:h-[40rem] lg:w-[75rem] sm:w-[60rem] flex flex-wrap justify-center px-10 py-8 sm:px-6">
+        <div
+          class="h-[22.5rem] lg:h-[35rem] w-[30rem] lg:w-[62.5rem] xl:w-[75rem] min-[768px]:w-[40rem] w-auto rounded-lg bg-white block m-6 lg:m-10 p-6 lg:p-12 lg:py-10 px-8 sm:px-8shadow-md flex-inline justify-center shadow-in absolute"
+        >
+          <div class="w-[11.5rem] md:w-[24rem] right-[100%] h-[30%] md:h-[40%] bg-pink-400 mb-6 left-[0%] relative">
+            <img src="./images/interview.jpeg" class="h-full w-full lg:w-auto lg:object-cover lg:overflow-hidden lg:h-auto left-[0%]" />
+          </div>
+          <div class="w-[11.5rem] min-[768px]:w-[20rem] left-[0%] relative">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat reprehenderit perferendis, illo iste quae molestias explicabo atque
+            eaque, ad, repudiandae iusto eum saepe voluptas excepturi repellat ea accusantium ipsum vero?
+          </div>
+        </div>
+        <!-- inlet desc -push page -->
+        <div
+          class="h-[25rem] lg:h-[40rem] min-[768px]:left-[8rem] xl:w-[35rem] w-auto rounded-lg bg-white block left-[6rem] lg:left-[10rem] shadow-md flex-inline bg-[#cfcfce] justify-center p-4 lg:p-14 py-4 lg:py-12 relative max-[480px]:hidden"
+          style="background-color: #cfcfcf"
+        >
+          <img src="./images/img1.jpeg" class="h-[40%] w-full bg-pink-400 mb-6 object-fill shadow-inner shadow-[3px]" />
+          <form action="home/interview">
+            <div class="flex-wrap w-auto">
+              <!-- profession -->
+              <label class="block text-gray-600 text-xs lg:text-lg font-bold" for="profession">Profession</label>
+              <input
+                class="shadow appearance-none border rounded w-full my-2 lg:py-2 lg:px-3 lg:my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline lg:mb-4"
+                id="username"
+                type="text"
+                placeholder="Profession"
+                name="profession"
+              />
+              <!-- time -->
+              <!-- <label class="block text-gray-600 text-lg font-bold" for="time_schedule">Time schedule </label>
         <input class="shadow appearance-none border rounded w-full py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" id="username" type="text" placeholder="Time schedule" name="time_schedule"> -->
-        <!-- mentor -->
-        <label class="block text-gray-600 text-xs lg:text-lg font-bold " for="Mentor" >Mentor</label>
-        <input class="shadow appearance-none border rounded w-full my-2 lg:py-2 lg:px-3 lg:my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline lg:mb-4" id="username" type="text" placeholder="Mentor" name="mentor">
-        <label class="block text-gray-600 text-xs lgs:text-lg font-bold " for="email">Email</label>
-        <input class="shadow appearance-none border rounded w-full my-2 lg:py-2 lg:px-3 lg:my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline lg:mb-4" id="username" type="text" placeholder="Mentor" name="email">
-      </div> 
-      <button class="bg-blue-400  hover:bg-blue-200 text-gray-100 font-bolds py-2 px-4 rounded"><input type="submit" value="Launch interview"></button>
-    </form>     
+              <!-- mentor -->
+              <label class="block text-gray-600 text-xs lg:text-lg font-bold" for="Mentor">Mentor</label>
+              <input
+                class="shadow appearance-none border rounded w-full my-2 lg:py-2 lg:px-3 lg:my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline lg:mb-4"
+                id="username"
+                type="text"
+                placeholder="Mentor"
+                name="mentor"
+              />
+              <label class="block text-gray-600 text-xs lgs:text-lg font-bold" for="email">Email</label>
+              <input
+                class="shadow appearance-none border rounded w-full my-2 lg:py-2 lg:px-3 lg:my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline lg:mb-4"
+                id="username"
+                type="text"
+                placeholder="Mentor"
+                name="email"
+              />
+            </div>
+            <button class="bg-blue-400 hover:bg-blue-200 text-gray-100 font-bolds py-2 px-4 rounded">
+              <input type="submit" value="Launch interview" />
+            </button>
+          </form>
+        </div>
       </div>
-     </div>
-  </div>
-
-</section>
-<!-- Review template -->
-<label class="flex justify-center text-xl md:text-3xl pb-10 text-white">Review </label>
-<section class="flex justify-center md:px-[5rem] pb-[2.5rem] h-auto">
-  
-  <div class="h-[35rem] w-[75rem] flex flex-wrap justify-center h-fit px-2 md:px-10 md:pb-8">
-
-    <div class="h-[30rem] w-[15rem] sm:w-[20rem] rounded-lg bg-white block p-6 mb-4 min-[330px]:m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center shadow-in">
-      <div class="block w-full h-1/3  bg-red-100">
-        <img src="./images/review1.jpeg" class=" object-contain overflow-hidden h-auto   ">
+    </section>
+    <!-- Review template -->
+    <label class="flex justify-center text-xl md:text-3xl pb-10 text-white">Review </label>
+    <section class="flex justify-center md:px-[5rem] pb-[2.5rem] h-auto">
+      <div class="h-[35rem] w-[75rem] flex flex-wrap justify-center h-fit px-2 md:px-10 md:pb-8">
+        <div
+          class="h-[20rem] min-h-[25rem] md:min-h-[30rem] w-[15rem] sm:w-[20rem] rounded-lg bg-white block p-6 mb-4 min-[330px]:m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center shadow-in"
+        >
+          <div class="block w-full h-fit bg-red-100">
+            <img src="./images/review1.jpeg" class="object-cover overflow-hidden h-auto" />
+          </div>
+          <div class="flex justify-center my-5 p-4">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda mollitia corporis vero, iure a debitis doloremque quia eos ab delectus
+            dolore odit voluptatem sapiente id impedit ea veniam aliquid at?
+          </div>
+        </div>
+        <div
+          class="h-[20rem] min-h-[25rem] md:min-h-[30rem] w-[15rem] sm:w-[20rem] rounded-lg bg-white block p-6 mb-4 min-[330px]:m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center shadow-in"
+        >
+          <div class="block w-full h-fit bg-red-100">
+            <img src="./images/review2.jpeg" class="object-cover overflow-hidden h-auto" />
+          </div>
+          <div class="flex justify-center my-5 p-4">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda mollitia corporis vero, iure a debitis doloremque quia eos ab delectus
+            dolore odit voluptatem sapiente id impedit ea veniam aliquid at?
+          </div>
+        </div>
+        <div
+          class="h-[20rem] min-h-[25rem] md:min-h-[30rem] w-[15rem] sm:w-[20rem] rounded-lg bg-white block p-6 mb-4 min-[330px]:m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center shadow-in"
+        >
+          <div class="block w-full h-fit bg-red-100">
+            <img src="./images/review3.jpeg" class="object-cover overflow-hidden h-auto" />
+          </div>
+          <div class="flex justify-center my-5 p-4">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda mollitia corporis vero, iure a debitis doloremque quia eos ab delectus
+            dolore odit voluptatem sapiente id impedit ea veniam aliquid at?
+          </div>
+        </div>
       </div>
-      <div class="flex justify-center my-5 p-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda mollitia corporis vero, iure a debitis doloremque quia eos ab delectus dolore odit voluptatem sapiente id impedit ea veniam   aliquid at?
-      </div>
-    </div>
-    <div class="h-[20rem] min-h-[30rem] w-[15rem] sm:w-[20rem] rounded-lg bg-white block p-6 mb-4 min-[330px]:m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center shadow-in">
-      <div class="block w-full h-1/3  bg-red-100">
-        <img src="./images/review2.jpeg" class="object-contain overflow-hidden h-auto">
-      </div>
-      <div class="flex justify-center my-5 p-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda mollitia corporis vero, iure a debitis doloremque quia eos ab delectus dolore odit voluptatem sapiente id impedit ea veniam   aliquid at?
-      </div>
-    </div>
-    <div class="h-[30rem] w-[15rem] sm:w-[20rem] rounded-lg bg-white block p-6 mb-4 min-[330px]:m-6 shadow-md hover:shadow-2xl flex flex-wrap justify-center items-center shadow-in">
-      <div class="block w-full h-1/3  bg-red-100">
-        <img src="./images/review3.jpeg" class="object-contain overflow-hidden h-auto">
-      </div>
-      <div class="flex justify-center my-5 p-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda mollitia corporis vero, iure a debitis doloremque quia eos ab delectus dolore odit voluptatem sapiente id impedit ea veniam   aliquid at?
-      </div>
-    </div>
-
- 
-    
-
-   
-  </div>
-
-</section>
-<!-- job req-card -->
-<label id="end" class="flex justify-center text-xl md:text-3xl  text-white ">Recent Top recruiter</label>
-<section class="flex justify-center md:p-[5rem] py-[2.5rem] h-auto w-auto">
-  
-  <div class="h-[35rem] w-[20rem] sm:w-[75rem] flex-wrap h-fit bg-slate-100 shadow-lg border-solid border-2 border-[#243c5a] flex px-2 py-2 md:px-10 md:py-8 shadow-inner justify-center w-fit min-[330px]:mx-2 min-[330px]:mb-4">
-
-    <% if(items!=undefined){%>
-         
-      <% items.forEach(function(image) { %>
-    <div class="h-full w-[15rem] sm:w-[20rem] bg-white block min-[258px]:p-6 my-4 min-[330px]:m-6 shadow-lg hover:shadow-2xl ">
-      <div class="block w-full  rounded-t-lg bg-red-100">
-          <img src="data:image/<%=image.imageUrl.contentType%>;base64,
-          <%=image.imageUrl.data.toString('base64')%>" class="cover h-[10rem] w-full">
-      </div>
-      <div class="block w-full h-[13rem] items-center ">
-        <hr>
-        <h5 class="p-[.5rem]">Title : <%= image.job_title %></h5>
-        <hr>
-        <p class="p-[.5rem] overflow-y-scroll max-h-[7.5rem]">Description : <%= image.desc %></p>
-        <hr>
-        <p class="p-[.5rem]">Salary : <%= image.salary %></p>
-      </div>
-    </div>
-    <% }) %>
-    <% }%>
-    <!-- <div class="h-full w-[20rem] bg-white block p-6 m-6 shadow-lg hover:shadow-2xl ">
+    </section>
+    <!-- job req-card -->
+    <label id="end" class="flex justify-center text-xl md:text-3xl text-white">Recent Top recruiter</label>
+    <section class="flex justify-center md:p-[5rem] py-[2.5rem] h-auto w-auto">
+      <div
+        class="h-[35rem] w-[20rem] sm:w-[75rem] flex-wrap h-fit bg-slate-100 shadow-lg border-solid border-2 border-[#243c5a] flex px-2 py-2 md:px-10 md:py-8 shadow-inner justify-center w-fit min-[330px]:mx-2 min-[330px]:mb-4"
+      >
+        <% if(items!=undefined){%> <% items.forEach(function(image) { %>
+        <div class="h-full w-[15rem] sm:w-[20rem] bg-white block min-[258px]:p-6 my-4 min-[330px]:m-6 shadow-lg hover:shadow-2xl">
+          <div class="block w-full rounded-t-lg bg-red-100">
+            <img
+              src="data:image/<%=image.imageUrl.contentType%>;base64,
+          <%=image.imageUrl.data.toString('base64')%>"
+              class="cover h-[10rem] w-full"
+            />
+          </div>
+          <div class="block w-full h-[13rem] items-center">
+            <hr />
+            <h5 class="p-[.5rem]">Title : <%= image.job_title %></h5>
+            <hr />
+            <p class="p-[.5rem] overflow-y-scroll max-h-[7.5rem]">Description : <%= image.desc %></p>
+            <hr />
+            <p class="p-[.5rem]">Salary : <%= image.salary %></p>
+          </div>
+        </div>
+        <% }) %> <% }%>
+        <!-- <div class="h-full w-[20rem] bg-white block p-6 m-6 shadow-lg hover:shadow-2xl ">
       <div class="block w-full h-1/3 rounded-t-lg bg-red-100">
           <img src="./images/TCS_Logo.jpg" class="object-fit">
       </div>
@@ -302,37 +333,46 @@ footer{
         
       </div>
     </div> -->
-  </div>
-</section>
-<footer>
-  <section class="h-max  bg-gray-500 text-gray-100 " >
-      <ul class="justify-center">
-          <li class="flex justify-center mx-4 py-5 font-bold">Copy right 2022-<a href="./Home.html" class="hover:underline">Job Geek</a><p class="text-xs">TM</p>.All right received
+      </div>
+    </section>
+    <footer>
+      <section class="h-max bg-gray-500 text-gray-100">
+        <ul class="justify-center">
+          <li class="flex justify-center mx-4 py-5 font-bold">
+            Copy right 2022-<a href="./Home.html" class="hover:underline">Job Geek</a>
+            <p class="text-xs">TM</p>
+            .All right received
           </li>
           <li class="flex justify-center mx-4 py-5">Address-baroda,varnama,Babaria institute of technology</li>
           <ul class="flex justify-center mx-4 py-5">
-              <li class=" h-6 w-6 mx-2">
-                  <a href="https://www.youtube.com/channel/UCpnW4eginLfg2rCcMjAn5dA?view_as=subscriber">
-                      <img class="h-6" src="https://www.freepnglogos.com/uploads/youtube-logo-transparent-10.png"
-                          width="200" alt="youtube logo transparent">
-                  </a>
-              </li>
-              <li class="h-6 w-6 mx-2">
-                  <a href="https://www.facebook.com/babaria.institute/"></a>
-                  <img class="h-6"
-                      src="https://www.freeiconspng.com/uploads/-van-de-laatste-nieuwsberichten-volg-ons-via-twitter-en-facebook-4.png"
-                      width="200" alt="Facebook new logo png">
-                  </a>
-              </li>
-              <li class="h-2 w-6 mx-2">
-                  <a
-                      href="https://www.instagram.com/bits.edu.campus_official/?utm_source=ig_profile_share&igshid=15s3hwp5s8tp8"></a>
-                  <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png">
-                  </a>
-              </li>
+            <li class="h-6 w-6 mx-2">
+              <a href="https://www.youtube.com/channel/UCpnW4eginLfg2rCcMjAn5dA?view_as=subscriber">
+                <img
+                  class="h-6"
+                  src="https://www.freepnglogos.com/uploads/youtube-logo-transparent-10.png"
+                  width="200"
+                  alt="youtube logo transparent"
+                />
+              </a>
+            </li>
+            <li class="h-6 w-6 mx-2">
+              <a href="https://www.facebook.com/babaria.institute/">
+                <img
+                  class="h-6"
+                  src="https://www.freeiconspng.com/uploads/-van-de-laatste-nieuwsberichten-volg-ons-via-twitter-en-facebook-4.png"
+                  width="200"
+                  alt="Facebook new logo png"
+                />
+              </a>
+            </li>
+            <li class="h-2 w-6 mx-2">
+              <a href="https://www.instagram.com/bits.edu.campus_official/?utm_source=ig_profile_share&igshid=15s3hwp5s8tp8">
+                <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" />
+              </a>
+            </li>
           </ul>
-      </ul>
-  </section>
-</footer>
-</body>
+        </ul>
+      </section>
+    </footer>
+  </body>
 </html>
